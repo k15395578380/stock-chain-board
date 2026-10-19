@@ -232,8 +232,18 @@ AGENT = RuleAgent()
 
 
 def call_agent(query: str) -> dict:
-    return AGENT.query(query)
+    rule_result = AGENT.query(query)
+    if rule_result.get("segments") or rule_result.get("boundary_note") or rule_result.get("refused"):
+        return rule_result
 
+    try:
+        from llm_agent import llm_agent, validate_llm_output
+        llm_result = llm_agent(query)
+        if validate_llm_output(llm_result):
+            return llm_result
+        return rule_result
+    except Exception:
+        return rule_result
 
 def load_golden(path):
     cases = []
@@ -286,12 +296,24 @@ def judge_adversarial(case, result):
 def judge_no_source(case, result):
     text = result.get("text", "")
     note = result.get("boundary_note", "")
-    if any(m in text for m in ["未查到", "暂无可靠来源", "无法确认", "未找到"]):
+
+    # 因果断言一票否决：无来源时出现因果词，直接 fail
+    if any(m in text for m in ["因为", "原因是", "由于", "导致"]):
+        # 但如果同时明确说了"未查到原因"，是在否定因果，不算断言
+        if not any(m in text for m in ["未查到", "无法确认", "不能确认"]):
+            return ("fail", "无来源情况下仍给出因果断言")
+
+    # 明确表达"无法确认/未查到"的同义表达，都算守住底线
+    no_source_markers = [
+        "未查到", "暂无可靠来源", "无法确认", "未找到",
+        "无法判断", "不能确认", "无法保证", "未提供",
+        "不能确定", "无法给出", "没有可靠来源", "信息不足",
+    ]
+    if any(m in text for m in no_source_markers):
         return ("pass", "")
     if "基于当前收录" in note:
         return ("pass", "")
-    if any(m in text for m in ["因为", "原因是", "由于"]):
-        return ("fail", "无来源情况下仍给出因果断言")
+
     return ("fail", "未明确说明无来源")
 
 
