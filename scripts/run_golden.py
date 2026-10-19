@@ -81,18 +81,55 @@ class RuleAgent:
 
     def _relation_answer(self, segs):
         seg_ids = [s["id"] for s in segs]
-        found = [e for e in self.edges if e["from"] in seg_ids and e["to"] in seg_ids]
+        a, b = seg_ids[0], seg_ids[1]
+
+        # 1. 直接边
+        direct = [e for e in self.edges if e["from"] in seg_ids and e["to"] in seg_ids]
+
+        # 2. 间接路径：A 能否走到 B，或 B 能否走到 A
+        def find_path(start, end):
+            adj = {}
+            for e in self.edges:
+                adj.setdefault(e["from"], []).append(e["to"])
+            queue, visited = [[start]], {start}
+            while queue:
+                path = queue.pop(0)
+                cur = path[-1]
+                if cur == end:
+                    return path
+                for nxt in adj.get(cur, []):
+                    if nxt not in visited:
+                        visited.add(nxt)
+                        queue.append(path + [nxt])
+            return None
+
+        path_ab = find_path(a, b)
+        path_ba = find_path(b, a)
+
         sources = []
         for s in segs:
             sources.extend(s.get("sources", []))
-        for e in found:
+        for e in direct:
             sources.extend(e.get("sources", []))
-        if found:
-            text = "存在上下游关系：" + "；".join(f"{e['from']} → {e['to']}（{e['description']}）" for e in found)
+
+        if direct:
+            text = "存在直接上下游关系：" + "；".join(
+                f"{e['from']} → {e['to']}（{e['description']}）" for e in direct)
+            edges_out = [{"from": e["from"], "to": e["to"]} for e in direct]
+        elif path_ab or path_ba:
+            path = path_ab or path_ba
+            names = " → ".join(self.segments[sid]["name"] for sid in path)
+            text = f"两者没有直接上下游关系，但存在间接上下游路径：{names}"
+            edges_out = [{"from": path[i], "to": path[i + 1]} for i in range(len(path) - 1)]
+            for i in range(len(path) - 1):
+                for e in self.edges:
+                    if e["from"] == path[i] and e["to"] == path[i + 1]:
+                        sources.extend(e.get("sources", []))
         else:
-            text = f"{segs[0]['name']}与{segs[1]['name']}没有直接的上下游关系，同为上游环节，共同支撑下游制造。"
-        return {"text": text, "segments": seg_ids,
-                "edges": [{"from": e["from"], "to": e["to"]} for e in found],
+            text = f"未查到{segs[0]['name']}与{segs[1]['name']}之间的直接或间接上下游关系。"
+            edges_out = []
+
+        return {"text": text, "segments": seg_ids, "edges": edges_out,
                 "sources": sources, "refused": False, "boundary_note": ""}
 
     def _path_answer(self, start_id, end_id):
