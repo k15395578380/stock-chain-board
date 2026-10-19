@@ -64,6 +64,27 @@ class RuleAgent:
             f"{self.segments.get(sid, {}).get('name', sid)}（{sid}）" for sid in segs)
         return {"text": text, "segments": segs, "edges": [], "sources": sources,
                 "refused": False, "boundary_note": ""}
+    def _company_relation(self, n1, c1, n2, c2):
+        segs1 = set(c1.get("segment_ids", []))
+        segs2 = set(c2.get("segment_ids", []))
+        common = segs1 & segs2
+
+        if common:
+            names = "、".join(self.segments[s]["name"] for s in common)
+            text = f"{n1}与{n2}同属{names}环节，属于同环节公司，本版不判断竞争或合作关系。"
+            seg_ids = list(common)
+        else:
+            text = f"{n1}归属{ '、'.join(segs1) }，{n2}归属{ '、'.join(segs2) }，两者不属于同一环节，具体供应关系需有带来源的边才能确认。"
+            seg_ids = list(segs1 | segs2)
+
+        sources = []
+        for c in (c1, c2):
+            sources.extend(c.get("sources", []))
+        for sid in seg_ids:
+            sources.extend(self._sources_of(sid))
+
+        return {"text": text, "segments": seg_ids, "edges": [], "sources": sources,
+                "refused": False, "boundary_note": ""}
 
     def _company_upstream(self, name, comp):
         upstream = []
@@ -129,7 +150,15 @@ class RuleAgent:
             text = f"未查到{segs[0]['name']}与{segs[1]['name']}之间的直接或间接上下游关系。"
             edges_out = []
 
-        return {"text": text, "segments": seg_ids, "edges": edges_out,
+        seg_result = []
+        for e in edges_out:
+            if e["from"] not in seg_result:
+                seg_result.append(e["from"])
+            if e["to"] not in seg_result:
+                seg_result.append(e["to"])
+        if not seg_result:
+            seg_result = seg_ids
+        return {"text": text, "segments": seg_result, "edges": edges_out,
                 "sources": sources, "refused": False, "boundary_note": ""}
 
     def _path_answer(self, start_id, end_id):
@@ -190,9 +219,10 @@ class RuleAgent:
         if any(k in q for k in ["新政策", "最新", "最近", "昨天", "今天", "为什么涨", "为什么跌"]):
             return self._not_found()
 
-        # 3. 特殊边界
-        if "最赚钱" in q or "盈利比较" in q:
+        # 3. 边界：盈利比较（扩展词表，"更赚钱""哪个更"都算）
+        if any(k in q for k in ["最赚钱", "更赚钱", "盈利比较", "哪个更", "盈利能力", "利润率"]):
             return self._boundary("本版不做盈利比较，只展示产业链结构")
+
         if "最多" in q and "公司" in q:
             return self._boundary("基于当前收录数据统计，本版不声称全市场排名")
         if "国产化率" in q:
@@ -207,16 +237,22 @@ class RuleAgent:
                     return self._company_answer(comp)
             return self._boundary("同一公司可能归属多个环节，本版会分别给出各环节相关度，不做单一强制归类")
 
-        # 4. 公司匹配（含上游查询）
-        for name, comp in self.companies.items():
-            if name in q:
-                if "上游" in q:
-                    return self._company_upstream(name, comp)
-                return self._company_answer(comp)
+        # 4. 多公司关系：query 里命中两家及以上公司，走关系查询
+        hit_companies = [(name, comp) for name, comp in self.companies.items() if name in q]
+        if len(hit_companies) >= 2:
+            (n1, c1), (n2, c2) = hit_companies[0], hit_companies[1]
+            return self._company_relation(n1, c1, n2, c2)
+
+        # 5. 单公司（含上游查询）
+        if hit_companies:
+            name, comp = hit_companies[0]
+            if "上游" in q:
+                return self._company_upstream(name, comp)
+            return self._company_answer(comp)
 
         matched = [seg for seg in self.segments.values() if seg["name"] in q]
 
-        # 5. 主题 + 上游/下游（先于"未收录公司"判断，避免被误拦截）
+        # 6. 主题 + 上游/下游（必须先于"未收录公司"判断）
         for theme, seg_ids in self.THEME_KEYWORDS.items():
             if theme in q:
                 for tier_kw, tier in [("上游", "upstream"), ("下游", "downstream")]:
@@ -229,26 +265,26 @@ class RuleAgent:
                                 "segments": tier_segs, "edges": [], "sources": sources,
                                 "refused": False, "boundary_note": ""}
 
-        # 6. 未收录公司判断
+        # 7. 未收录公司判断
         if any(k in q for k in ["什么位置", "哪个环节", "属于"]) and not any(
                 seg["name"] in q for seg in self.segments.values()):
             return self._boundary("未收录该公司，暂无法确定其在已覆盖产业链中的位置")
 
-        # 7. 路径（从A到B / 经过）
+        # 8. 影响/传导（必须在关系查询之前）
+        if any(k in q for k in ["影响", "传导", "波及", "带动"]) and matched:
+            return self._propagation_answer(matched[0])
+
+        # 9. 路径
         if len(matched) >= 2 and ("经过" in q or ("从" in q and "到" in q)):
             path = self._path_answer(matched[0]["id"], matched[1]["id"])
             if path:
                 return path
 
-        # 8. 两个 segment 的关系
+        # 10. 两个环节的关系
         if len(matched) >= 2:
             return self._relation_answer(matched[:2])
 
-        # 9. 传导
-        if "影响" in q and matched:
-            return self._propagation_answer(matched[0])
-
-        # 10. 主要公司
+        # 11. 主要公司
         if "主要公司" in q or "有哪些公司" in q:
             for theme, seg_ids in self.THEME_KEYWORDS.items():
                 if theme in q:
@@ -258,12 +294,11 @@ class RuleAgent:
                             "segments": [], "edges": [], "sources": [],
                             "refused": False, "boundary_note": "基于当前收录"}
 
-        # 11. 单 segment
+        # 12. 单 segment
         if matched:
             return self._segment_answer(matched[0])
 
         return self._not_found()
-
 
 AGENT = RuleAgent()
 
