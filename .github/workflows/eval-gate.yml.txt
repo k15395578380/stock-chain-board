@@ -1,0 +1,33 @@
+name: eval-gate
+on:
+  push:
+    branches: [main]
+    paths:
+      - "chains/**"
+      - "evals/**"
+      - "scripts/**"
+  pull_request:
+    paths:
+      - "chains/**"
+      - "evals/**"
+      - "scripts/**"
+
+jobs:
+  gate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Validate chains
+        run: python scripts/validate_chains.py
+      - name: Run golden eval
+        run: python scripts/run_golden.py
+      - name: Enforce gate
+        run: |
+          python -c "
+          import json, sys
+          r = json.load(open('artifacts/eval-report/report.json'))
+          sys.exit(0 if r['gates']['overall'] == 'PASS' else 1)
+          "
