@@ -426,7 +426,13 @@ def main():
         "normal_threshold_met": nt > 0 and np_ / nt >= 10 / 12,
         "boundary_threshold_met": bt > 0 and bp / bt >= 6 / 8,
     }
+    # 回归 case 硬门禁：任何一条 fail，overall 直接 FAIL
+    REGRESSION_IDS = {"N12", "N13", "N14", "N15", "N16"}
+    regression_failures = [c["id"] for c in results if c["id"] in REGRESSION_IDS and c["status"] != "pass"]
+    gates["regression_cases_pass"] = len(regression_failures) == 0
     gates["overall"] = "PASS" if all(gates.values()) else "FAIL"
+    if regression_failures:
+        print(f"回归 case 失败: {regression_failures}")
 
     report = {"suite": args.suite,
               "summary": {"normal_pass": f"{np_}/{nt}", "boundary_pass": f"{bp}/{bt}",

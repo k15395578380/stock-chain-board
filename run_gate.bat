@@ -11,10 +11,15 @@ if errorlevel 1 (
 
 echo [2/3] 运行 golden 评估...
 python scripts\run_golden.py
-if errorlevel 1 (
+set GATE_RESULT=%errorlevel%
+
+echo [3/3] 失败明细
+python scripts\show_fails.py
+
+if %GATE_RESULT% neq 0 (
     echo 评估层门禁失败，查看 artifacts\eval-report\report.json
     exit /b 1
 )
 
-echo [3/3] 门禁通过
+echo 门禁通过
 exit /b 0
