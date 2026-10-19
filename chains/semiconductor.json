@@ -331,6 +331,312 @@
           "data_date": "2025-04-30"
         }
       ]
+    },
+    {
+      "id": "300655",
+      "name": "晶瑞电材",
+      "segment_ids": [
+        "semi.material"
+      ],
+      "relevance": {
+        "semi.material": 0.9
+      },
+      "relevance_basis": "公司是国内电子材料龙头企业，主导产品包括高纯湿电子化学品、光刻胶等半导体材料",
+      "sources": [
+        {
+          "source_type": "annual_report",
+          "source_title": "晶瑞电材2025年年度报告摘要",
+          "source_url_or_id": "巨潮资讯-300655-2025年报",
+          "data_date": "2026-04-28"
+        }
+      ]
+    },
+    {
+      "id": "688019",
+      "name": "安集科技",
+      "segment_ids": [
+        "semi.material"
+      ],
+      "relevance": {
+        "semi.material": 0.95
+      },
+      "relevance_basis": "公司主营化学机械抛光液、功能性湿电子化学品和电镀液及添加剂，属于半导体材料核心环节",
+      "sources": [
+        {
+          "source_type": "annual_report",
+          "source_title": "安集科技2025年年度报告",
+          "source_url_or_id": "上交所-688019-2025年报",
+          "data_date": "2026-04-16"
+        }
+      ]
+    },
+    {
+      "id": "300346",
+      "name": "南大光电",
+      "segment_ids": [
+        "semi.material"
+      ],
+      "relevance": {
+        "semi.material": 0.85
+      },
+      "relevance_basis": "公司专注先进前驱体（MO源）、电子特气和光刻胶三大核心电子材料的研发生产",
+      "sources": [
+        {
+          "source_type": "annual_report",
+          "source_title": "南大光电2025年年度报告摘要",
+          "source_url_or_id": "巨潮资讯-300346-2025年报",
+          "data_date": "2026-04-10"
+        }
+      ]
+    },
+    {
+      "id": "603650",
+      "name": "彤程新材",
+      "segment_ids": [
+        "semi.material"
+      ],
+      "relevance": {
+        "semi.material": 0.8
+      },
+      "relevance_basis": "公司半导体光刻胶是芯片制造的关键光刻材料，用于将电路图形转移至硅片表面",
+      "sources": [
+        {
+          "source_type": "annual_report",
+          "source_title": "彤程新材2025年年度报告摘要",
+          "source_url_or_id": "上交所-603650-2025年报",
+          "data_date": "2026-04-18"
+        }
+      ]
+    },
+    {
+      "id": "688521",
+      "name": "芯原股份",
+      "segment_ids": [
+        "semi.ic_design",
+        "semi.eda_ip"
+      ],
+      "relevance": {
+        "semi.ic_design": 0.85,
+        "semi.eda_ip": 0.7
+      },
+      "relevance_basis": "公司主营芯片设计服务与半导体IP授权，2025年营收约31.53亿元，同时涉及芯片设计和EDA/IP环节",
+      "sources": [
+        {
+          "source_type": "annual_report",
+          "source_title": "芯原股份2025年年度业绩预告",
+          "source_url_or_id": "上交所-688521-2025年报",
+          "data_date": "2026-01-24"
+        }
+      ]
+    },
+    {
+      "id": "688347",
+      "name": "华虹公司",
+      "segment_ids": [
+        "semi.wafer_fab"
+      ],
+      "relevance": {
+        "semi.wafer_fab": 0.95
+      },
+      "relevance_basis": "公司是国内两大晶圆代工巨头之一，2025年营收172.91亿元，主营晶圆代工",
+      "sources": [
+        {
+          "source_type": "annual_report",
+          "source_title": "华虹半导体2025年年度报告",
+          "source_url_or_id": "上交所-688347-2025年报",
+          "data_date": "2026-03-26"
+        }
+      ]
+    },
+    {
+      "id": "688072",
+      "name": "拓荆科技",
+      "segment_ids": [
+        "semi.equipment"
+      ],
+      "relevance": {
+        "semi.equipment": 0.9
+      },
+      "relevance_basis": "公司主营PECVD、ALD等薄膜沉积设备，2025年半导体专用设备收入62.96亿元，占营收96.57%",
+      "sources": [
+        {
+          "source_type": "annual_report",
+          "source_title": "拓荆科技2025年年度报告",
+          "source_url_or_id": "上交所-688072-2025年报",
+          "data_date": "2026-04-24"
+        }
+      ]
+    },
+    {
+      "id": "688082",
+      "name": "盛美上海",
+      "segment_ids": [
+        "semi.equipment"
+      ],
+      "relevance": {
+        "semi.equipment": 0.85
+      },
+      "relevance_basis": "公司主营半导体清洗设备，2025年营收67.86亿元，清洗设备收入45.06亿元，在手订单90.72亿元",
+      "sources": [
+        {
+          "source_type": "annual_report",
+          "source_title": "盛美上海2025年年度报告",
+          "source_url_or_id": "上交所-688082-2025年报",
+          "data_date": "2026-04-24"
+        }
+      ]
+    },
+    {
+      "id": "688120",
+      "name": "华海清科",
+      "segment_ids": [
+        "semi.equipment"
+      ],
+      "relevance": {
+        "semi.equipment": 0.85
+      },
+      "relevance_basis": "公司主营CMP化学机械抛光设备，2025年营收46.48亿元，是国产CMP设备龙头",
+      "sources": [
+        {
+          "source_type": "annual_report",
+          "source_title": "华海清科2025年年度报告",
+          "source_url_or_id": "上交所-688120-2025年报",
+          "data_date": "2026-04-24"
+        }
+      ]
+    },
+    {
+      "id": "688037",
+      "name": "芯源微",
+      "segment_ids": [
+        "semi.equipment"
+      ],
+      "relevance": {
+        "semi.equipment": 0.8
+      },
+      "relevance_basis": "公司主营涂胶显影设备和单片式湿法设备，是半导体设备国产化的重要参与者",
+      "sources": [
+        {
+          "source_type": "annual_report",
+          "source_title": "芯源微2025年年度报告",
+          "source_url_or_id": "上交所-688037-2025年报",
+          "data_date": "2026-04-24"
+        }
+      ]
+    },
+    {
+      "id": "688249",
+      "name": "晶合集成",
+      "segment_ids": [
+        "semi.wafer_fab"
+      ],
+      "relevance": {
+        "semi.wafer_fab": 0.9
+      },
+      "relevance_basis": "公司主营12英寸晶圆代工，2025年营收108.85亿元，全球晶圆代工排名第九、中国大陆第三",
+      "sources": [
+        {
+          "source_type": "annual_report",
+          "source_title": "晶合集成2025年年度报告",
+          "source_url_or_id": "上交所-688249-2025年报",
+          "data_date": "2026-03-26"
+        }
+      ]
+    },
+    {
+      "id": "002185",
+      "name": "华天科技",
+      "segment_ids": [
+        "semi.osat"
+      ],
+      "relevance": {
+        "semi.osat": 0.9
+      },
+      "relevance_basis": "公司主营集成电路封装测试，2025年营收172.14亿元，国内封测三大龙头之一",
+      "sources": [
+        {
+          "source_type": "annual_report",
+          "source_title": "华天科技2025年年度报告",
+          "source_url_or_id": "巨潮资讯-002185-2025年报",
+          "data_date": "2026-03-31"
+        }
+      ]
+    },
+    {
+      "id": "688099",
+      "name": "晶晨股份",
+      "segment_ids": [
+        "semi.end_app"
+      ],
+      "relevance": {
+        "semi.end_app": 0.85
+      },
+      "relevance_basis": "公司主营智能机顶盒、智能电视等终端SoC芯片，2025年营收67.93亿元，受益于端侧智能技术渗透率提升",
+      "sources": [
+        {
+          "source_type": "annual_report",
+          "source_title": "晶晨股份2025年年度报告",
+          "source_url_or_id": "上交所-688099-2025年报",
+          "data_date": "2026-03-30"
+        }
+      ]
+    },
+    {
+      "id": "300458",
+      "name": "全志科技",
+      "segment_ids": [
+        "semi.end_app"
+      ],
+      "relevance": {
+        "semi.end_app": 0.85
+      },
+      "relevance_basis": "公司主营智能终端应用处理器芯片，2025年营收28.38亿元，智能终端应用处理器芯片收入24.28亿元占营收85.56%",
+      "sources": [
+        {
+          "source_type": "annual_report",
+          "source_title": "全志科技2025年年度报告",
+          "source_url_or_id": "巨潮资讯-300458-2025年报",
+          "data_date": "2026-03-26"
+        }
+      ]
+    },
+    {
+      "id": "603893",
+      "name": "瑞芯微",
+      "segment_ids": [
+        "semi.end_app"
+      ],
+      "relevance": {
+        "semi.end_app": 0.8
+      },
+      "relevance_basis": "公司主营智能应用处理器SoC芯片，广泛应用于AIoT、智能视觉、汽车电子等终端场景",
+      "sources": [
+        {
+          "source_type": "annual_report",
+          "source_title": "瑞芯微2025年前三季度经营数据",
+          "source_url_or_id": "上交所-603893-2025三季报",
+          "data_date": "2025-10-28"
+        }
+      ]
+    },
+    {
+      "id": "688608",
+      "name": "恒玄科技",
+      "segment_ids": [
+        "semi.end_app"
+      ],
+      "relevance": {
+        "semi.end_app": 0.8
+      },
+      "relevance_basis": "公司主营智能音频SoC芯片，应用于TWS耳机、智能音箱等消费电子终端，2025年前三季度营收29.33亿元",
+      "sources": [
+        {
+          "source_type": "annual_report",
+          "source_title": "恒玄科技2025年三季度报告",
+          "source_url_or_id": "上交所-688608-2025三季报",
+          "data_date": "2025-10-30"
+        }
+      ]
     }
   ],
   "edges": [

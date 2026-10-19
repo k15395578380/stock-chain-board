@@ -461,6 +461,373 @@
           "data_date": "2025-04-30"
         }
       ]
+    },
+    {
+      "id": "603185",
+      "name": "弘元绿能",
+      "segment_ids": [
+        "pv.silicon",
+        "pv.wafer"
+      ],
+      "relevance": {
+        "pv.silicon": 0.7,
+        "pv.wafer": 0.8
+      },
+      "relevance_basis": "公司依托硅料—硅片—电池—组件全产业链垂直一体化布局，硅片为重要业务环节",
+      "sources": [
+        {
+          "source_type": "annual_report",
+          "source_title": "弘元绿能2025年年度报告",
+          "source_url_or_id": "上交所-603185-2025年报",
+          "data_date": "2026-04-30"
+        }
+      ]
+    },
+    {
+      "id": "600481",
+      "name": "双良节能",
+      "segment_ids": [
+        "pv.wafer"
+      ],
+      "relevance": {
+        "pv.wafer": 0.8
+      },
+      "relevance_basis": "公司专注光伏单晶硅片，2025年前三季度营收60.76亿元，Q3单季扭亏",
+      "sources": [
+        {
+          "source_type": "annual_report",
+          "source_title": "双良节能2025年年度报告",
+          "source_url_or_id": "上交所-600481-2025年报",
+          "data_date": "2026-04-30"
+        }
+      ]
+    },
+    {
+      "id": "601908",
+      "name": "京运通",
+      "segment_ids": [
+        "pv.wafer"
+      ],
+      "relevance": {
+        "pv.wafer": 0.8
+      },
+      "relevance_basis": "公司是国内N型大尺寸硅片供应商第二梯队，拥有40GW硅片产能，N型出货占比超70%",
+      "sources": [
+        {
+          "source_type": "annual_report",
+          "source_title": "京运通2025年年度报告",
+          "source_url_or_id": "上交所-601908-2025年报",
+          "data_date": "2026-04-30"
+        }
+      ]
+    },
+    {
+      "id": "688390",
+      "name": "固德威",
+      "segment_ids": [
+        "pv.inverter"
+      ],
+      "relevance": {
+        "pv.inverter": 0.85
+      },
+      "relevance_basis": "公司主营光伏并网逆变器和储能逆变器，是分布式光储市场的主要参与者之一",
+      "sources": [
+        {
+          "source_type": "annual_report",
+          "source_title": "固德威2025年年度报告",
+          "source_url_or_id": "上交所-688390-2025年报",
+          "data_date": "2026-04-30"
+        }
+      ]
+    },
+    {
+      "id": "605117",
+      "name": "德业股份",
+      "segment_ids": [
+        "pv.inverter"
+      ],
+      "relevance": {
+        "pv.inverter": 0.85
+      },
+      "relevance_basis": "公司主营光伏逆变器及储能设备，是逆变器行业头部企业之一",
+      "sources": [
+        {
+          "source_type": "annual_report",
+          "source_title": "德业股份2025年年度报告",
+          "source_url_or_id": "上交所-605117-2025年报",
+          "data_date": "2026-04-30"
+        }
+      ]
+    },
+    {
+      "id": "688032",
+      "name": "禾迈股份",
+      "segment_ids": [
+        "pv.inverter"
+      ],
+      "relevance": {
+        "pv.inverter": 0.8
+      },
+      "relevance_basis": "公司主营微型逆变器，2025年前三季度营收13.23亿元，深耕欧美户用光伏市场",
+      "sources": [
+        {
+          "source_type": "annual_report",
+          "source_title": "禾迈股份2025年年度报告",
+          "source_url_or_id": "上交所-688032-2025年报",
+          "data_date": "2026-04-30"
+        }
+      ]
+    },
+    {
+      "id": "688348",
+      "name": "昱能科技",
+      "segment_ids": [
+        "pv.inverter"
+      ],
+      "relevance": {
+        "pv.inverter": 0.8
+      },
+      "relevance_basis": "公司以微型逆变器为主业，长期深耕欧美户用光伏市场，并向储能赛道转型",
+      "sources": [
+        {
+          "source_type": "annual_report",
+          "source_title": "昱能科技2025年年度报告",
+          "source_url_or_id": "上交所-688348-2025年报",
+          "data_date": "2026-04-30"
+        }
+      ]
+    },
+    {
+      "id": "300772",
+      "name": "运达股份",
+      "segment_ids": [
+        "wind.turbine"
+      ],
+      "relevance": {
+        "wind.turbine": 0.9
+      },
+      "relevance_basis": "公司主营风电整机制造，2025年营收294.02亿元，国内新增吊装量第二",
+      "sources": [
+        {
+          "source_type": "annual_report",
+          "source_title": "运达股份2025年年度报告",
+          "source_url_or_id": "巨潮资讯-300772-2025年报",
+          "data_date": "2026-03-23"
+        }
+      ]
+    },
+    {
+      "id": "688660",
+      "name": "电气风电",
+      "segment_ids": [
+        "wind.turbine"
+      ],
+      "relevance": {
+        "wind.turbine": 0.85
+      },
+      "relevance_basis": "公司主营风电整机制造，2025年营收136.81亿元，风机及零部件业务收入131.2亿元",
+      "sources": [
+        {
+          "source_type": "annual_report",
+          "source_title": "电气风电2025年年度报告",
+          "source_url_or_id": "上交所-688660-2025年报",
+          "data_date": "2026-04-02"
+        }
+      ]
+    },
+    {
+      "id": "688349",
+      "name": "三一重能",
+      "segment_ids": [
+        "wind.turbine"
+      ],
+      "relevance": {
+        "wind.turbine": 0.85
+      },
+      "relevance_basis": "公司主营风电整机制造，2025年营收273.8亿元，是国内风电整机重要厂商",
+      "sources": [
+        {
+          "source_type": "annual_report",
+          "source_title": "三一重能2025年年度报告",
+          "source_url_or_id": "上交所-688349-2025年报",
+          "data_date": "2026-04-30"
+        }
+      ]
+    },
+    {
+      "id": "300443",
+      "name": "金雷股份",
+      "segment_ids": [
+        "wind.component"
+      ],
+      "relevance": {
+        "wind.component": 0.85
+      },
+      "relevance_basis": "公司是风电主轴龙头，海外客户占比高，属于风电核心零部件环节",
+      "sources": [
+        {
+          "source_type": "annual_report",
+          "source_title": "金雷股份2025年年度报告",
+          "source_url_or_id": "巨潮资讯-300443-2025年报",
+          "data_date": "2026-04-30"
+        }
+      ]
+    },
+    {
+      "id": "603212",
+      "name": "赛伍技术",
+      "segment_ids": [
+        "pv.aux"
+      ],
+      "relevance": {
+        "pv.aux": 0.9
+      },
+      "relevance_basis": "公司光伏材料业务涵盖封装胶膜、背板、焊线胶带等辅材，2025年光伏材料收入17.56亿元占总营收67.0%",
+      "sources": [
+        {
+          "source_type": "annual_report",
+          "source_title": "赛伍技术2025年年度报告",
+          "source_url_or_id": "上交所-603212-2025年报",
+          "data_date": "2026-04-30"
+        }
+      ]
+    },
+    {
+      "id": "301266",
+      "name": "宇邦新材",
+      "segment_ids": [
+        "pv.aux"
+      ],
+      "relevance": {
+        "pv.aux": 0.85
+      },
+      "relevance_basis": "公司主营光伏涂锡焊带，2025年营收29.68亿元，互连焊带收入24.01亿元占营收80.9%，客户涵盖隆基、晶科、通威等",
+      "sources": [
+        {
+          "source_type": "annual_report",
+          "source_title": "宇邦新材2025年年度报告",
+          "source_url_or_id": "巨潮资讯-301266-2025年报",
+          "data_date": "2026-04-17"
+        }
+      ]
+    },
+    {
+      "id": "301168",
+      "name": "通灵股份",
+      "segment_ids": [
+        "pv.aux"
+      ],
+      "relevance": {
+        "pv.aux": 0.85
+      },
+      "relevance_basis": "公司主营光伏接线盒，2025年营收13.50亿元，是全球光伏接线盒市占率第一的龙头企业",
+      "sources": [
+        {
+          "source_type": "annual_report",
+          "source_title": "通灵股份2025年年度报告",
+          "source_url_or_id": "巨潮资讯-301168-2025年报",
+          "data_date": "2026-04-30"
+        }
+      ]
+    },
+    {
+      "id": "301278",
+      "name": "快可电子",
+      "segment_ids": [
+        "pv.aux"
+      ],
+      "relevance": {
+        "pv.aux": 0.8
+      },
+      "relevance_basis": "公司主营光伏接线盒，2025年营收10.84亿元同比增长20.02%，全球接线盒市占率第二",
+      "sources": [
+        {
+          "source_type": "annual_report",
+          "source_title": "快可电子2025年年度报告",
+          "source_url_or_id": "巨潮资讯-301278-2025年报",
+          "data_date": "2026-04-30"
+        }
+      ]
+    },
+    {
+      "id": "000591",
+      "name": "太阳能",
+      "segment_ids": [
+        "pv.epc"
+      ],
+      "relevance": {
+        "pv.epc": 0.9
+      },
+      "relevance_basis": "公司主营光伏电站投资运营，2025年营收49.57亿元，运营电站约7.17GW，光伏电站板块收入42.72亿元占总收入86.18%",
+      "sources": [
+        {
+          "source_type": "annual_report",
+          "source_title": "太阳能2025年年度报告",
+          "source_url_or_id": "巨潮资讯-000591-2025年报",
+          "data_date": "2026-04-24"
+        }
+      ]
+    },
+    {
+      "id": "601619",
+      "name": "嘉泽新能",
+      "segment_ids": [
+        "pv.epc",
+        "wind.farm"
+      ],
+      "relevance": {
+        "pv.epc": 0.7,
+        "wind.farm": 0.8
+      },
+      "relevance_basis": "公司主营新能源电站开发-建设-运营-出售，2025年营收24.99亿元，并网装机2487MW含风电2211MW、光伏270MW",
+      "sources": [
+        {
+          "source_type": "annual_report",
+          "source_title": "嘉泽新能2025年年度报告",
+          "source_url_or_id": "上交所-601619-2025年报",
+          "data_date": "2026-03-27"
+        }
+      ]
+    },
+    {
+      "id": "600930",
+      "name": "华电新能",
+      "segment_ids": [
+        "wind.farm",
+        "pv.epc"
+      ],
+      "relevance": {
+        "wind.farm": 0.85,
+        "pv.epc": 0.75
+      },
+      "relevance_basis": "公司主营风电和光伏电站开发运营，2025年营收389.80亿元，风电收入224.8亿元占57.68%，光伏收入150.58亿元",
+      "sources": [
+        {
+          "source_type": "annual_report",
+          "source_title": "华电新能2025年年度报告",
+          "source_url_or_id": "上交所-600930-2025年报",
+          "data_date": "2026-04-21"
+        }
+      ]
+    },
+    {
+      "id": "601016",
+      "name": "节能风电",
+      "segment_ids": [
+        "wind.farm"
+      ],
+      "relevance": {
+        "wind.farm": 0.85
+      },
+      "relevance_basis": "公司主营风力发电，2025年营收44.95亿元，是A股纯风电运营央企平台",
+      "sources": [
+        {
+          "source_type": "annual_report",
+          "source_title": "节能风电2025年年度报告",
+          "source_url_or_id": "上交所-601016-2025年报",
+          "data_date": "2026-04-22"
+        }
+      ]
     }
   ],
   "edges": [
