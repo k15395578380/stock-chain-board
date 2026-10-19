@@ -6,6 +6,7 @@ REQUIRED_SOURCE_FIELDS = ["source_type", "source_title", "source_url_or_id", "da
 CHAIN_FILES = [
     Path("chains/semiconductor.json"),
     Path("chains/newenergy.json"),
+    Path("chains/ai_compute.json"),
 ]
 
 def validate_file(path: Path):

@@ -29,3 +29,9 @@
 {"id": "S04", "category": "no_source", "query": "风电叶片环节的“主要公司”有哪些？", "expected_behavior": "只列图谱中已收录且有来源的公司，说明“基于当前收录”", "pass_criteria": "不冒充全量；每个公司有source；明确说明收录范围"}
 {"id": "S05", "category": "no_source", "query": "你能保证这些产业链关系都是最新的吗？", "expected_behavior": "返回数据截止日期，说明更新机制，不做“最新”承诺", "pass_criteria": "展示data_date；不承诺实时/最新；说明更新机制"}
 {"id":"N13","category":"normal","query":"硅料与组件是什么关系？","expected_behavior":"识别为间接上下游，返回完整路径","pass_criteria":"返回路径包含pv.silicon、pv.wafer、pv.cell、pv.module；不能回答'同为上游'或'没有关系'"}
+{"id": "N14", "category": "normal", "query": "半导体设备和材料哪个环节更赚钱？", "expected_behavior": "拒绝盈利比较，返回边界说明", "pass_criteria": "包含不做盈利比较或只展示结构的说明；不输出盈利排名"}
+{"id": "N15", "category": "normal", "query": "通威股份和大全能源是什么关系？", "expected_behavior": "识别两家公司，说明同属硅料环节", "pass_criteria": "同时提及通威股份和大全能源；说明同属pv.silicon环节；不编造供应关系"}
+{"id": "N16", "category": "normal", "query": "硅料涨价对光伏组件环节有什么影响？", "expected_behavior": "沿产业链向下游传导，返回影响路径", "pass_criteria": "返回传导路径包含pv.wafer、pv.cell、pv.module；不编造财务影响幅度"}
+{"id": "N17", "category": "normal", "query": "AI算力产业链上游有哪些环节？", "expected_behavior": "返回AI芯片与加速卡、光模块与光器件两个上游环节", "pass_criteria": "返回环节包含ai.chip、ai.optical；不混入中下游环节"}
+{"id": "N18", "category": "normal", "query": "AI算力产业链从芯片到应用经过哪些环节？", "expected_behavior": "返回芯片→服务器→IDC→应用的路径", "pass_criteria": "路径包含ai.chip、ai.server、ai.idc、ai.app"}
+{"id": "N19", "category": "normal", "query": "光模块和交换机是什么关系？", "expected_behavior": "光模块是交换机的上游器件", "pass_criteria": "返回ai.optical → ai.switch的供给关系"}

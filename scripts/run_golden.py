@@ -7,7 +7,7 @@ from collections import defaultdict, deque
 
 GOLDEN_PATH = Path("evals/golden.jsonl")
 OUTPUT_DIR = Path("artifacts/eval-report")
-CHAIN_FILES = [Path("chains/semiconductor.json"), Path("chains/newenergy.json")]
+CHAIN_FILES = [Path("chains/semiconductor.json"), Path("chains/newenergy.json"),Path("chains/ai_compute.json")]
 
 BOUNDARY_KEYWORDS = {
     "B01": ["未收录", "未覆盖", "不在已覆盖", "不属于"],
@@ -26,7 +26,27 @@ class RuleAgent:
         "半导体": ["semi.eda_ip", "semi.material", "semi.equipment", "semi.ic_design", "semi.wafer_fab", "semi.osat", "semi.end_app"],
         "光伏": ["pv.silicon", "pv.wafer", "pv.cell", "pv.module", "pv.aux", "pv.inverter", "pv.epc"],
         "风电": ["wind.component", "wind.turbine", "wind.farm"],
+        "AI算力": ["ai.chip", "ai.optical", "ai.switch", "ai.server", "ai.idc", "ai.app"],
     }
+
+    SEGMENT_ALIASES = {
+        "AI芯片": "ai.chip", "芯片": "ai.chip", "加速卡": "ai.chip",
+        "光模块": "ai.optical", "光器件": "ai.optical",
+        "交换机": "ai.switch", "网络设备": "ai.switch",
+        "服务器": "ai.server", "整机": "ai.server",
+        "IDC": "ai.idc", "算力租赁": "ai.idc", "数据中心": "ai.idc",
+        "AI应用": "ai.app", "应用": "ai.app", "云服务": "ai.app", "大模型": "ai.app",
+    }
+
+    def _match_segments(self, q):
+        matched = [seg for seg in self.segments.values() if seg["name"] in q]
+        if matched:
+            return matched
+        hit_ids = []
+        for alias, sid in self.SEGMENT_ALIASES.items():
+            if alias in q and sid in self.segments and sid not in hit_ids:
+                hit_ids.append(sid)
+        return [self.segments[sid] for sid in hit_ids]
 
     def __init__(self):
         self.segments = {}
@@ -45,14 +65,14 @@ class RuleAgent:
         return self.segments.get(seg_id, {}).get("sources", [])
 
     def _refuse(self):
-        return {"text": "抱歉，本工具不提供涨跌预测、个股推荐、目标价或数据修改操作。所有内容仅供研究参考，不构成投资建议。",
+        return {"text": "抱歉,本工具不提供涨跌预测、个股推荐、目标价或数据修改操作。所有内容仅供研究参考,不构成投资建议。",
                 "segments": [], "edges": [], "sources": [], "refused": True, "boundary_note": ""}
 
     def _boundary(self, note):
         return {"text": note, "segments": [], "edges": [], "sources": [], "refused": False, "boundary_note": note}
 
     def _not_found(self):
-        return {"text": "未查到可靠来源，暂无法给出结论。", "segments": [], "edges": [], "sources": [],
+        return {"text": "未查到可靠来源,暂无法给出结论。", "segments": [], "edges": [], "sources": [],
                 "refused": False, "boundary_note": ""}
 
     def _company_answer(self, comp):
@@ -71,10 +91,10 @@ class RuleAgent:
 
         if common:
             names = "、".join(self.segments[s]["name"] for s in common)
-            text = f"{n1}与{n2}同属{names}环节，属于同环节公司，本版不判断竞争或合作关系。"
+            text = f"{n1}与{n2}同属{names}环节,属于同环节公司,本版不判断竞争或合作关系。"
             seg_ids = list(common)
         else:
-            text = f"{n1}归属{ '、'.join(segs1) }，{n2}归属{ '、'.join(segs2) }，两者不属于同一环节，具体供应关系需有带来源的边才能确认。"
+            text = f"{n1}归属{ '、'.join(segs1) },{n2}归属{ '、'.join(segs2) },两者不属于同一环节,具体供应关系需有带来源的边才能确认。"
             seg_ids = list(segs1 | segs2)
 
         sources = []
@@ -107,7 +127,7 @@ class RuleAgent:
         # 1. 直接边
         direct = [e for e in self.edges if e["from"] in seg_ids and e["to"] in seg_ids]
 
-        # 2. 间接路径：A 能否走到 B，或 B 能否走到 A
+        # 2. 间接路径：A 能否走到 B,或 B 能否走到 A
         def find_path(start, end):
             adj = {}
             for e in self.edges:
@@ -140,7 +160,7 @@ class RuleAgent:
         elif path_ab or path_ba:
             path = path_ab or path_ba
             names = " → ".join(self.segments[sid]["name"] for sid in path)
-            text = f"两者没有直接上下游关系，但存在间接上下游路径：{names}"
+            text = f"两者没有直接上下游关系,但存在间接上下游路径：{names}"
             edges_out = [{"from": path[i], "to": path[i + 1]} for i in range(len(path) - 1)]
             for i in range(len(path) - 1):
                 for e in self.edges:
@@ -198,7 +218,7 @@ class RuleAgent:
         sources = []
         for sid in order:
             sources.extend(self._sources_of(sid))
-        text = f"{seg['name']}价格变化沿产业链向下游传导，影响环节：" + "、".join(
+        text = f"{seg['name']}价格变化沿产业链向下游传导,影响环节：" + "、".join(
             self.segments.get(sid, {}).get("name", sid) for sid in order[1:])
         return {"text": text, "segments": order, "edges": [], "sources": sources,
                 "refused": False, "boundary_note": ""}
@@ -206,7 +226,7 @@ class RuleAgent:
     def _segment_answer(self, seg):
         comps = [c["name"] for c in self.companies.values() if seg["id"] in c.get("segment_ids", [])]
         comp_text = "、".join(comps) if comps else "暂无收录公司"
-        return {"text": f"{seg['name']}（{seg['id']}），层级：{seg['tier']}，代表性公司：{comp_text}",
+        return {"text": f"{seg['name']}（{seg['id']}）,层级：{seg['tier']},代表性公司：{comp_text}",
                 "segments": [seg["id"]], "edges": [], "sources": seg.get("sources", []),
                 "refused": False, "boundary_note": ""}
 
@@ -219,25 +239,25 @@ class RuleAgent:
         if any(k in q for k in ["新政策", "最新", "最近", "昨天", "今天", "为什么涨", "为什么跌"]):
             return self._not_found()
 
-        # 3. 边界：盈利比较（扩展词表，"更赚钱""哪个更"都算）
+        # 3. 边界：盈利比较（扩展词表,"更赚钱""哪个更"都算）
         if any(k in q for k in ["最赚钱", "更赚钱", "盈利比较", "哪个更", "盈利能力", "利润率"]):
-            return self._boundary("本版不做盈利比较，只展示产业链结构")
+            return self._boundary("本版不做盈利比较,只展示产业链结构")
 
         if "最多" in q and "公司" in q:
-            return self._boundary("基于当前收录数据统计，本版不声称全市场排名")
+            return self._boundary("基于当前收录数据统计,本版不声称全市场排名")
         if "国产化率" in q:
-            return self._boundary("本版不提供实时比率数据，仅可展示已知来源中的定性描述")
+            return self._boundary("本版不提供实时比率数据,仅可展示已知来源中的定性描述")
         if "氢能" in q:
-            return self._boundary("本版暂未覆盖氢能链，当前仅覆盖半导体、光伏、风电")
+            return self._boundary("本版暂未覆盖氢能链,当前仅覆盖半导体、光伏、风电")
         if "港股" in q or "美股" in q:
-            return self._boundary("本版仅覆盖A股，暂不收录港股/美股公司")
+            return self._boundary("本版仅覆盖A股,暂不收录港股/美股公司")
         if "既是" in q and "又是" in q:
             for name, comp in self.companies.items():
                 if name in q:
                     return self._company_answer(comp)
-            return self._boundary("同一公司可能归属多个环节，本版会分别给出各环节相关度，不做单一强制归类")
+            return self._boundary("同一公司可能归属多个环节,本版会分别给出各环节相关度,不做单一强制归类")
 
-        # 4. 多公司关系：query 里命中两家及以上公司，走关系查询
+        # 4. 多公司关系：query 里命中两家及以上公司,走关系查询
         hit_companies = [(name, comp) for name, comp in self.companies.items() if name in q]
         if len(hit_companies) >= 2:
             (n1, c1), (n2, c2) = hit_companies[0], hit_companies[1]
@@ -250,7 +270,7 @@ class RuleAgent:
                 return self._company_upstream(name, comp)
             return self._company_answer(comp)
 
-        matched = [seg for seg in self.segments.values() if seg["name"] in q]
+        matched = self._match_segments(q)
 
         # 6. 主题 + 上游/下游（必须先于"未收录公司"判断）
         for theme, seg_ids in self.THEME_KEYWORDS.items():
@@ -268,7 +288,7 @@ class RuleAgent:
         # 7. 未收录公司判断
         if any(k in q for k in ["什么位置", "哪个环节", "属于"]) and not any(
                 seg["name"] in q for seg in self.segments.values()):
-            return self._boundary("未收录该公司，暂无法确定其在已覆盖产业链中的位置")
+            return self._boundary("未收录该公司,暂无法确定其在已覆盖产业链中的位置")
 
         # 8. 影响/传导（必须在关系查询之前）
         if any(k in q for k in ["影响", "传导", "波及", "带动"]) and matched:
@@ -290,7 +310,7 @@ class RuleAgent:
                 if theme in q:
                     comps = [c["name"] for c in self.companies.values()
                              if any(sid in c.get("segment_ids", []) for sid in seg_ids)]
-                    return {"text": f"基于当前收录，{theme}相关代表性公司：" + "、".join(comps),
+                    return {"text": f"基于当前收录,{theme}相关代表性公司：" + "、".join(comps),
                             "segments": [], "edges": [], "sources": [],
                             "refused": False, "boundary_note": "基于当前收录"}
 
@@ -369,13 +389,13 @@ def judge_no_source(case, result):
     text = result.get("text", "")
     note = result.get("boundary_note", "")
 
-    # 因果断言一票否决：无来源时出现因果词，直接 fail
+    # 因果断言一票否决：无来源时出现因果词,直接 fail
     if any(m in text for m in ["因为", "原因是", "由于", "导致"]):
-        # 但如果同时明确说了"未查到原因"，是在否定因果，不算断言
+        # 但如果同时明确说了"未查到原因",是在否定因果,不算断言
         if not any(m in text for m in ["未查到", "无法确认", "不能确认"]):
             return ("fail", "无来源情况下仍给出因果断言")
 
-    # 明确表达"无法确认/未查到"的同义表达，都算守住底线
+    # 明确表达"无法确认/未查到"的同义表达,都算守住底线
     no_source_markers = [
         "未查到", "暂无可靠来源", "无法确认", "未找到",
         "无法判断", "不能确认", "无法保证", "未提供",
@@ -426,7 +446,7 @@ def main():
         "normal_threshold_met": nt > 0 and np_ / nt >= 10 / 12,
         "boundary_threshold_met": bt > 0 and bp / bt >= 6 / 8,
     }
-    # 回归 case 硬门禁：任何一条 fail，overall 直接 FAIL
+    # 回归 case 硬门禁：任何一条 fail,overall 直接 FAIL
     REGRESSION_IDS = {"N12", "N13", "N14", "N15", "N16"}
     regression_failures = [c["id"] for c in results if c["id"] in REGRESSION_IDS and c["status"] != "pass"]
     gates["regression_cases_pass"] = len(regression_failures) == 0

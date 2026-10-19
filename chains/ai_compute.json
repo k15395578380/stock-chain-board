@@ -1,0 +1,22 @@
+{
+  "chain_id": "ai_compute",
+  "chain_name": "AI算力",
+  "schema_version": "0.1.0",
+  "data_date": "2026-10-19",
+  "segments": [
+    {"id": "ai.chip", "name": "AI芯片与加速卡", "tier": "upstream", "description": "GPU、NPU、AI加速卡", "sources": [{"source_type": "industry_standard", "source_title": "AI算力产业链环节说明", "source_url_or_id": "公开行业资料-AI算力产业链", "data_date": "2025-12-31"}]},
+    {"id": "ai.optical", "name": "光模块与光器件", "tier": "upstream", "description": "高速光模块、光芯片、光器件", "sources": [{"source_type": "industry_standard", "source_title": "光模块环节说明", "source_url_or_id": "公开行业资料-光模块", "data_date": "2025-12-31"}]},
+    {"id": "ai.switch", "name": "交换机与网络设备", "tier": "midstream", "description": "数据中心交换机、路由器", "sources": [{"source_type": "industry_standard", "source_title": "数据中心网络设备说明", "source_url_or_id": "公开行业资料-网络设备", "data_date": "2025-12-31"}]},
+    {"id": "ai.server", "name": "服务器与整机", "tier": "midstream", "description": "AI服务器、整机制造", "sources": [{"source_type": "industry_standard", "source_title": "AI服务器环节说明", "source_url_or_id": "公开行业资料-AI服务器", "data_date": "2025-12-31"}]},
+    {"id": "ai.idc", "name": "IDC与算力租赁", "tier": "downstream", "description": "数据中心、智算中心、算力租赁", "sources": [{"source_type": "industry_standard", "source_title": "IDC环节说明", "source_url_or_id": "公开行业资料-IDC", "data_date": "2025-12-31"}]},
+    {"id": "ai.app", "name": "AI应用与云服务", "tier": "downstream", "description": "大模型、AI应用、云服务", "sources": [{"source_type": "industry_standard", "source_title": "AI应用环节说明", "source_url_or_id": "公开行业资料-AI应用", "data_date": "2025-12-31"}]}
+  ],
+  "companies": [],
+  "edges": [
+    {"id": "edge.ai.chip__server", "type": "SUPPLIES_TO", "from": "ai.chip", "to": "ai.server", "description": "AI芯片是服务器的核心算力部件", "sources": [{"source_type": "industry_standard", "source_title": "AI服务器构成说明", "source_url_or_id": "公开行业资料-AI服务器", "data_date": "2025-12-31"}]},
+    {"id": "edge.ai.optical__switch", "type": "SUPPLIES_TO", "from": "ai.optical", "to": "ai.switch", "description": "光模块是交换机互联的关键器件", "sources": [{"source_type": "industry_standard", "source_title": "交换机互联说明", "source_url_or_id": "公开行业资料-网络设备", "data_date": "2025-12-31"}]},
+    {"id": "edge.ai.switch__server", "type": "SUPPLIES_TO", "from": "ai.switch", "to": "ai.server", "description": "交换机连接服务器集群", "sources": [{"source_type": "industry_standard", "source_title": "数据中心组网说明", "source_url_or_id": "公开行业资料-网络设备", "data_date": "2025-12-31"}]},
+    {"id": "edge.ai.server__idc", "type": "SUPPLIES_TO", "from": "ai.server", "to": "ai.idc", "description": "服务器部署在数据中心", "sources": [{"source_type": "industry_standard", "source_title": "数据中心部署说明", "source_url_or_id": "公开行业资料-IDC", "data_date": "2025-12-31"}]},
+    {"id": "edge.ai.idc__app", "type": "SUPPLIES_TO", "from": "ai.idc", "to": "ai.app", "description": "算力支撑上层AI应用", "sources": [{"source_type": "industry_standard", "source_title": "算力与应用关系说明", "source_url_or_id": "公开行业资料-AI应用", "data_date": "2025-12-31"}]}
+  ]
+}
