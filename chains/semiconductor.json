@@ -1,0 +1,428 @@
+{
+  "chain_id": "semiconductor",
+  "chain_name": "半导体",
+  "schema_version": "0.1.0",
+  "data_date": "2026-10-19",
+  "segments": [
+    {
+      "id": "semi.eda_ip",
+      "name": "EDA与IP",
+      "tier": "upstream",
+      "description": "芯片设计工具与可复用模块",
+      "sources": [
+        {
+          "source_type": "industry_standard",
+          "source_title": "集成电路产业链环节说明",
+          "source_url_or_id": "行业协会公开资料-集成电路产业链",
+          "data_date": "2025-12-31"
+        }
+      ]
+    },
+    {
+      "id": "semi.material",
+      "name": "半导体材料",
+      "tier": "upstream",
+      "description": "硅片、光刻胶、电子特气、靶材等",
+      "sources": [
+        {
+          "source_type": "industry_standard",
+          "source_title": "半导体材料分类",
+          "source_url_or_id": "行业协会公开资料-半导体材料",
+          "data_date": "2025-12-31"
+        }
+      ]
+    },
+    {
+      "id": "semi.equipment",
+      "name": "半导体设备",
+      "tier": "upstream",
+      "description": "刻蚀、薄膜沉积、光刻、清洗等设备",
+      "sources": [
+        {
+          "source_type": "industry_standard",
+          "source_title": "半导体设备分类",
+          "source_url_or_id": "行业协会公开资料-半导体设备",
+          "data_date": "2025-12-31"
+        }
+      ]
+    },
+    {
+      "id": "semi.ic_design",
+      "name": "芯片设计",
+      "tier": "midstream",
+      "description": "Fabless设计公司",
+      "sources": [
+        {
+          "source_type": "industry_standard",
+          "source_title": "集成电路设计环节",
+          "source_url_or_id": "行业协会公开资料-集成电路设计",
+          "data_date": "2025-12-31"
+        }
+      ]
+    },
+    {
+      "id": "semi.wafer_fab",
+      "name": "晶圆制造",
+      "tier": "midstream",
+      "description": "Foundry/IDM制造环节",
+      "sources": [
+        {
+          "source_type": "industry_standard",
+          "source_title": "晶圆制造环节",
+          "source_url_or_id": "行业协会公开资料-晶圆制造",
+          "data_date": "2025-12-31"
+        }
+      ]
+    },
+    {
+      "id": "semi.osat",
+      "name": "封装测试",
+      "tier": "midstream",
+      "description": "传统封装与先进封装",
+      "sources": [
+        {
+          "source_type": "industry_standard",
+          "source_title": "封装测试环节",
+          "source_url_or_id": "行业协会公开资料-封装测试",
+          "data_date": "2025-12-31"
+        }
+      ]
+    },
+    {
+      "id": "semi.end_app",
+      "name": "终端应用",
+      "tier": "downstream",
+      "description": "消费电子、汽车、AI算力等",
+      "sources": [
+        {
+          "source_type": "industry_standard",
+          "source_title": "半导体终端应用分类",
+          "source_url_or_id": "行业协会公开资料-终端应用",
+          "data_date": "2025-12-31"
+        }
+      ]
+    }
+  ],
+  "companies": [
+    {
+      "id": "301269",
+      "name": "华大九天",
+      "segment_ids": [
+        "semi.eda_ip"
+      ],
+      "relevance": {
+        "semi.eda_ip": 0.95
+      },
+      "relevance_basis": "公司主营业务为EDA工具软件",
+      "sources": [
+        {
+          "source_type": "annual_report",
+          "source_title": "2024年年度报告-主营业务分析",
+          "source_url_or_id": "巨潮资讯-301269-2024年报",
+          "data_date": "2025-04-30"
+        }
+      ]
+    },
+    {
+      "id": "688206",
+      "name": "概伦电子",
+      "segment_ids": [
+        "semi.eda_ip"
+      ],
+      "relevance": {
+        "semi.eda_ip": 0.85
+      },
+      "relevance_basis": "公司主营EDA工具及半导体器件建模",
+      "sources": [
+        {
+          "source_type": "annual_report",
+          "source_title": "2024年年度报告-主营业务分析",
+          "source_url_or_id": "上交所-688206-2024年报",
+          "data_date": "2025-04-30"
+        }
+      ]
+    },
+    {
+      "id": "688126",
+      "name": "沪硅产业",
+      "segment_ids": [
+        "semi.material"
+      ],
+      "relevance": {
+        "semi.material": 0.95
+      },
+      "relevance_basis": "公司主营半导体硅片",
+      "sources": [
+        {
+          "source_type": "annual_report",
+          "source_title": "2024年年度报告-主营业务分析",
+          "source_url_or_id": "上交所-688126-2024年报",
+          "data_date": "2025-04-30"
+        }
+      ]
+    },
+    {
+      "id": "605358",
+      "name": "立昂微",
+      "segment_ids": [
+        "semi.material"
+      ],
+      "relevance": {
+        "semi.material": 0.85
+      },
+      "relevance_basis": "公司主营半导体硅片及功率器件",
+      "sources": [
+        {
+          "source_type": "annual_report",
+          "source_title": "2024年年度报告-主营业务分析",
+          "source_url_or_id": "上交所-605358-2024年报",
+          "data_date": "2025-04-30"
+        }
+      ]
+    },
+    {
+      "id": "002409",
+      "name": "雅克科技",
+      "segment_ids": [
+        "semi.material"
+      ],
+      "relevance": {
+        "semi.material": 0.8
+      },
+      "relevance_basis": "公司主营电子特气及前驱体材料",
+      "sources": [
+        {
+          "source_type": "annual_report",
+          "source_title": "2024年年度报告-主营业务分析",
+          "source_url_or_id": "巨潮资讯-002409-2024年报",
+          "data_date": "2025-04-30"
+        }
+      ]
+    },
+    {
+      "id": "002371",
+      "name": "北方华创",
+      "segment_ids": [
+        "semi.equipment"
+      ],
+      "relevance": {
+        "semi.equipment": 0.95
+      },
+      "relevance_basis": "公司主营刻蚀、薄膜沉积等半导体设备",
+      "sources": [
+        {
+          "source_type": "annual_report",
+          "source_title": "2024年年度报告-主营业务分析",
+          "source_url_or_id": "巨潮资讯-002371-2024年报",
+          "data_date": "2025-04-30"
+        }
+      ]
+    },
+    {
+      "id": "688012",
+      "name": "中微公司",
+      "segment_ids": [
+        "semi.equipment"
+      ],
+      "relevance": {
+        "semi.equipment": 0.9
+      },
+      "relevance_basis": "公司主营刻蚀设备及MOCVD设备",
+      "sources": [
+        {
+          "source_type": "annual_report",
+          "source_title": "2024年年度报告-主营业务分析",
+          "source_url_or_id": "上交所-688012-2024年报",
+          "data_date": "2025-04-30"
+        }
+      ]
+    },
+    {
+      "id": "688256",
+      "name": "寒武纪",
+      "segment_ids": [
+        "semi.ic_design"
+      ],
+      "relevance": {
+        "semi.ic_design": 0.9
+      },
+      "relevance_basis": "公司主营AI芯片设计",
+      "sources": [
+        {
+          "source_type": "annual_report",
+          "source_title": "2024年年度报告-主营业务分析",
+          "source_url_or_id": "上交所-688256-2024年报",
+          "data_date": "2025-04-30"
+        }
+      ]
+    },
+    {
+      "id": "603986",
+      "name": "兆易创新",
+      "segment_ids": [
+        "semi.ic_design"
+      ],
+      "relevance": {
+        "semi.ic_design": 0.85
+      },
+      "relevance_basis": "公司主营存储芯片及MCU设计",
+      "sources": [
+        {
+          "source_type": "annual_report",
+          "source_title": "2024年年度报告-主营业务分析",
+          "source_url_or_id": "上交所-603986-2024年报",
+          "data_date": "2025-04-30"
+        }
+      ]
+    },
+    {
+      "id": "688981",
+      "name": "中芯国际",
+      "segment_ids": [
+        "semi.wafer_fab"
+      ],
+      "relevance": {
+        "semi.wafer_fab": 0.98
+      },
+      "relevance_basis": "公司主营集成电路晶圆代工",
+      "sources": [
+        {
+          "source_type": "annual_report",
+          "source_title": "2024年年度报告-主营业务分析",
+          "source_url_or_id": "上交所-688981-2024年报",
+          "data_date": "2025-04-30"
+        }
+      ]
+    },
+    {
+      "id": "600584",
+      "name": "长电科技",
+      "segment_ids": [
+        "semi.osat"
+      ],
+      "relevance": {
+        "semi.osat": 0.95
+      },
+      "relevance_basis": "公司主营集成电路封装测试",
+      "sources": [
+        {
+          "source_type": "annual_report",
+          "source_title": "2024年年度报告-主营业务分析",
+          "source_url_or_id": "上交所-600584-2024年报",
+          "data_date": "2025-04-30"
+        }
+      ]
+    },
+    {
+      "id": "002156",
+      "name": "通富微电",
+      "segment_ids": [
+        "semi.osat"
+      ],
+      "relevance": {
+        "semi.osat": 0.9
+      },
+      "relevance_basis": "公司主营集成电路封装测试",
+      "sources": [
+        {
+          "source_type": "annual_report",
+          "source_title": "2024年年度报告-主营业务分析",
+          "source_url_or_id": "巨潮资讯-002156-2024年报",
+          "data_date": "2025-04-30"
+        }
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "id": "edge.semi.eda_ip__ic_design",
+      "type": "SUPPLIES_TO",
+      "from": "semi.eda_ip",
+      "to": "semi.ic_design",
+      "description": "EDA工具是芯片设计的必备工具",
+      "sources": [
+        {
+          "source_type": "industry_standard",
+          "source_title": "集成电路设计流程说明",
+          "source_url_or_id": "行业协会公开资料-设计流程",
+          "data_date": "2025-12-31"
+        }
+      ]
+    },
+    {
+      "id": "edge.semi.material__wafer_fab",
+      "type": "SUPPLIES_TO",
+      "from": "semi.material",
+      "to": "semi.wafer_fab",
+      "description": "硅片、光刻胶、电子特气等是晶圆制造的材料投入",
+      "sources": [
+        {
+          "source_type": "industry_standard",
+          "source_title": "晶圆制造材料投入说明",
+          "source_url_or_id": "行业协会公开资料-晶圆制造材料",
+          "data_date": "2025-12-31"
+        }
+      ]
+    },
+    {
+      "id": "edge.semi.equipment__wafer_fab",
+      "type": "SUPPLIES_TO",
+      "from": "semi.equipment",
+      "to": "semi.wafer_fab",
+      "description": "刻蚀、薄膜沉积等设备用于晶圆制造",
+      "sources": [
+        {
+          "source_type": "industry_standard",
+          "source_title": "晶圆制造设备说明",
+          "source_url_or_id": "行业协会公开资料-晶圆制造设备",
+          "data_date": "2025-12-31"
+        }
+      ]
+    },
+    {
+      "id": "edge.semi.ic_design__wafer_fab",
+      "type": "SUPPLIES_TO",
+      "from": "semi.ic_design",
+      "to": "semi.wafer_fab",
+      "description": "设计好的版图交由晶圆厂制造",
+      "sources": [
+        {
+          "source_type": "industry_standard",
+          "source_title": "Fabless与Foundry分工说明",
+          "source_url_or_id": "行业协会公开资料-产业分工",
+          "data_date": "2025-12-31"
+        }
+      ]
+    },
+    {
+      "id": "edge.semi.wafer_fab__osat",
+      "type": "SUPPLIES_TO",
+      "from": "semi.wafer_fab",
+      "to": "semi.osat",
+      "description": "晶圆制造完成后进入封装测试",
+      "sources": [
+        {
+          "source_type": "industry_standard",
+          "source_title": "封装测试工序说明",
+          "source_url_or_id": "行业协会公开资料-封测工序",
+          "data_date": "2025-12-31"
+        }
+      ]
+    },
+    {
+      "id": "edge.semi.osat__end_app",
+      "type": "SUPPLIES_TO",
+      "from": "semi.osat",
+      "to": "semi.end_app",
+      "description": "封测后的芯片用于终端应用",
+      "sources": [
+        {
+          "source_type": "industry_standard",
+          "source_title": "半导体终端应用说明",
+          "source_url_or_id": "行业协会公开资料-终端应用",
+          "data_date": "2025-12-31"
+        }
+      ]
+    }
+  ]
+}

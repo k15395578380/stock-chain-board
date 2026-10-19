@@ -1,0 +1,588 @@
+{
+  "chain_id": "newenergy",
+  "chain_name": "新能源",
+  "schema_version": "0.1.0",
+  "data_date": "2026-10-19",
+  "segments": [
+    {
+      "id": "pv.silicon",
+      "name": "硅料",
+      "tier": "upstream",
+      "description": "多晶硅料",
+      "sources": [
+        {
+          "source_type": "industry_standard",
+          "source_title": "光伏产业链环节说明",
+          "source_url_or_id": "行业协会公开资料-光伏产业链",
+          "data_date": "2025-12-31"
+        }
+      ]
+    },
+    {
+      "id": "pv.wafer",
+      "name": "硅片",
+      "tier": "upstream",
+      "description": "单晶/多晶硅片",
+      "sources": [
+        {
+          "source_type": "industry_standard",
+          "source_title": "光伏产业链环节说明",
+          "source_url_or_id": "行业协会公开资料-光伏产业链",
+          "data_date": "2025-12-31"
+        }
+      ]
+    },
+    {
+      "id": "pv.cell",
+      "name": "电池片",
+      "tier": "midstream",
+      "description": "高效电池技术",
+      "sources": [
+        {
+          "source_type": "industry_standard",
+          "source_title": "光伏产业链环节说明",
+          "source_url_or_id": "行业协会公开资料-光伏产业链",
+          "data_date": "2025-12-31"
+        }
+      ]
+    },
+    {
+      "id": "pv.module",
+      "name": "组件",
+      "tier": "midstream",
+      "description": "光伏组件",
+      "sources": [
+        {
+          "source_type": "industry_standard",
+          "source_title": "光伏产业链环节说明",
+          "source_url_or_id": "行业协会公开资料-光伏产业链",
+          "data_date": "2025-12-31"
+        }
+      ]
+    },
+    {
+      "id": "pv.aux",
+      "name": "辅材",
+      "tier": "upstream",
+      "description": "胶膜、玻璃、焊带等",
+      "sources": [
+        {
+          "source_type": "industry_standard",
+          "source_title": "光伏辅材分类",
+          "source_url_or_id": "行业协会公开资料-光伏辅材",
+          "data_date": "2025-12-31"
+        }
+      ]
+    },
+    {
+      "id": "pv.inverter",
+      "name": "逆变器",
+      "tier": "midstream",
+      "description": "光伏逆变器及储能变流器",
+      "sources": [
+        {
+          "source_type": "industry_standard",
+          "source_title": "光伏逆变器环节说明",
+          "source_url_or_id": "行业协会公开资料-光伏逆变器",
+          "data_date": "2025-12-31"
+        }
+      ]
+    },
+    {
+      "id": "pv.epc",
+      "name": "电站开发与运营",
+      "tier": "downstream",
+      "description": "电站投资、建设、发电",
+      "sources": [
+        {
+          "source_type": "industry_standard",
+          "source_title": "光伏电站环节说明",
+          "source_url_or_id": "行业协会公开资料-光伏电站",
+          "data_date": "2025-12-31"
+        }
+      ]
+    },
+    {
+      "id": "wind.component",
+      "name": "风电零部件",
+      "tier": "upstream",
+      "description": "叶片、塔筒、齿轮箱、发电机、变流器等",
+      "sources": [
+        {
+          "source_type": "industry_standard",
+          "source_title": "风电产业链环节说明",
+          "source_url_or_id": "行业协会公开资料-风电产业链",
+          "data_date": "2025-12-31"
+        }
+      ]
+    },
+    {
+      "id": "wind.turbine",
+      "name": "风电整机制造",
+      "tier": "midstream",
+      "description": "风机整机组装",
+      "sources": [
+        {
+          "source_type": "industry_standard",
+          "source_title": "风电产业链环节说明",
+          "source_url_or_id": "行业协会公开资料-风电产业链",
+          "data_date": "2025-12-31"
+        }
+      ]
+    },
+    {
+      "id": "wind.farm",
+      "name": "风场运营",
+      "tier": "downstream",
+      "description": "风场开发与运营",
+      "sources": [
+        {
+          "source_type": "industry_standard",
+          "source_title": "风电产业链环节说明",
+          "source_url_or_id": "行业协会公开资料-风电产业链",
+          "data_date": "2025-12-31"
+        }
+      ]
+    }
+  ],
+  "companies": [
+    {
+      "id": "600438",
+      "name": "通威股份",
+      "segment_ids": [
+        "pv.silicon",
+        "pv.cell"
+      ],
+      "relevance": {
+        "pv.silicon": 0.9,
+        "pv.cell": 0.7
+      },
+      "relevance_basis": "公司主营多晶硅料及电池片",
+      "sources": [
+        {
+          "source_type": "annual_report",
+          "source_title": "2024年年度报告-主营业务分析",
+          "source_url_or_id": "上交所-600438-2024年报",
+          "data_date": "2025-04-30"
+        }
+      ]
+    },
+    {
+      "id": "688303",
+      "name": "大全能源",
+      "segment_ids": [
+        "pv.silicon"
+      ],
+      "relevance": {
+        "pv.silicon": 0.95
+      },
+      "relevance_basis": "公司主营多晶硅料",
+      "sources": [
+        {
+          "source_type": "annual_report",
+          "source_title": "2024年年度报告-主营业务分析",
+          "source_url_or_id": "上交所-688303-2024年报",
+          "data_date": "2025-04-30"
+        }
+      ]
+    },
+    {
+      "id": "601012",
+      "name": "隆基绿能",
+      "segment_ids": [
+        "pv.wafer",
+        "pv.cell",
+        "pv.module"
+      ],
+      "relevance": {
+        "pv.wafer": 0.9,
+        "pv.cell": 0.75,
+        "pv.module": 0.7
+      },
+      "relevance_basis": "公司主营硅片、电池及组件",
+      "sources": [
+        {
+          "source_type": "annual_report",
+          "source_title": "2024年年度报告-主营业务分析",
+          "source_url_or_id": "上交所-601012-2024年报",
+          "data_date": "2025-04-30"
+        }
+      ]
+    },
+    {
+      "id": "002129",
+      "name": "TCL中环",
+      "segment_ids": [
+        "pv.wafer"
+      ],
+      "relevance": {
+        "pv.wafer": 0.9
+      },
+      "relevance_basis": "公司主营光伏硅片",
+      "sources": [
+        {
+          "source_type": "annual_report",
+          "source_title": "2024年年度报告-主营业务分析",
+          "source_url_or_id": "巨潮资讯-002129-2024年报",
+          "data_date": "2025-04-30"
+        }
+      ]
+    },
+    {
+      "id": "600732",
+      "name": "爱旭股份",
+      "segment_ids": [
+        "pv.cell"
+      ],
+      "relevance": {
+        "pv.cell": 0.95
+      },
+      "relevance_basis": "公司主营高效光伏电池片",
+      "sources": [
+        {
+          "source_type": "annual_report",
+          "source_title": "2024年年度报告-主营业务分析",
+          "source_url_or_id": "上交所-600732-2024年报",
+          "data_date": "2025-04-30"
+        }
+      ]
+    },
+    {
+      "id": "688223",
+      "name": "晶科能源",
+      "segment_ids": [
+        "pv.module"
+      ],
+      "relevance": {
+        "pv.module": 0.95
+      },
+      "relevance_basis": "公司主营光伏组件",
+      "sources": [
+        {
+          "source_type": "annual_report",
+          "source_title": "2024年年度报告-主营业务分析",
+          "source_url_or_id": "上交所-688223-2024年报",
+          "data_date": "2025-04-30"
+        }
+      ]
+    },
+    {
+      "id": "688599",
+      "name": "天合光能",
+      "segment_ids": [
+        "pv.module"
+      ],
+      "relevance": {
+        "pv.module": 0.9
+      },
+      "relevance_basis": "公司主营光伏组件及系统",
+      "sources": [
+        {
+          "source_type": "annual_report",
+          "source_title": "2024年年度报告-主营业务分析",
+          "source_url_or_id": "上交所-688599-2024年报",
+          "data_date": "2025-04-30"
+        }
+      ]
+    },
+    {
+      "id": "603806",
+      "name": "福斯特",
+      "segment_ids": [
+        "pv.aux"
+      ],
+      "relevance": {
+        "pv.aux": 0.95
+      },
+      "relevance_basis": "公司主营光伏胶膜",
+      "sources": [
+        {
+          "source_type": "annual_report",
+          "source_title": "2024年年度报告-主营业务分析",
+          "source_url_or_id": "上交所-603806-2024年报",
+          "data_date": "2025-04-30"
+        }
+      ]
+    },
+    {
+      "id": "601865",
+      "name": "福莱特",
+      "segment_ids": [
+        "pv.aux"
+      ],
+      "relevance": {
+        "pv.aux": 0.9
+      },
+      "relevance_basis": "公司主营光伏玻璃",
+      "sources": [
+        {
+          "source_type": "annual_report",
+          "source_title": "2024年年度报告-主营业务分析",
+          "source_url_or_id": "上交所-601865-2024年报",
+          "data_date": "2025-04-30"
+        }
+      ]
+    },
+    {
+      "id": "300274",
+      "name": "阳光电源",
+      "segment_ids": [
+        "pv.inverter",
+        "pv.epc",
+        "wind.component"
+      ],
+      "relevance": {
+        "pv.inverter": 0.95,
+        "pv.epc": 0.7,
+        "wind.component": 0.6
+      },
+      "relevance_basis": "公司主营光伏逆变器、储能及电站系统，风电变流器属于电气部件",
+      "sources": [
+        {
+          "source_type": "annual_report",
+          "source_title": "2024年年度报告-主营业务分析",
+          "source_url_or_id": "巨潮资讯-300274-2024年报",
+          "data_date": "2025-04-30"
+        }
+      ]
+    },
+    {
+      "id": "002202",
+      "name": "金风科技",
+      "segment_ids": [
+        "wind.turbine"
+      ],
+      "relevance": {
+        "wind.turbine": 0.95
+      },
+      "relevance_basis": "公司主营风电整机制造",
+      "sources": [
+        {
+          "source_type": "annual_report",
+          "source_title": "2024年年度报告-主营业务分析",
+          "source_url_or_id": "巨潮资讯-002202-2024年报",
+          "data_date": "2025-04-30"
+        }
+      ]
+    },
+    {
+      "id": "601615",
+      "name": "明阳智能",
+      "segment_ids": [
+        "wind.turbine"
+      ],
+      "relevance": {
+        "wind.turbine": 0.9
+      },
+      "relevance_basis": "公司主营风电整机制造",
+      "sources": [
+        {
+          "source_type": "annual_report",
+          "source_title": "2024年年度报告-主营业务分析",
+          "source_url_or_id": "上交所-601615-2024年报",
+          "data_date": "2025-04-30"
+        }
+      ]
+    },
+    {
+      "id": "603218",
+      "name": "日月股份",
+      "segment_ids": [
+        "wind.component"
+      ],
+      "relevance": {
+        "wind.component": 0.9
+      },
+      "relevance_basis": "公司主营风电铸件",
+      "sources": [
+        {
+          "source_type": "annual_report",
+          "source_title": "2024年年度报告-主营业务分析",
+          "source_url_or_id": "上交所-603218-2024年报",
+          "data_date": "2025-04-30"
+        }
+      ]
+    },
+    {
+      "id": "002531",
+      "name": "天顺风能",
+      "segment_ids": [
+        "wind.component"
+      ],
+      "relevance": {
+        "wind.component": 0.85
+      },
+      "relevance_basis": "公司主营风电塔筒",
+      "sources": [
+        {
+          "source_type": "annual_report",
+          "source_title": "2024年年度报告-主营业务分析",
+          "source_url_or_id": "巨潮资讯-002531-2024年报",
+          "data_date": "2025-04-30"
+        }
+      ]
+    },
+    {
+      "id": "001289",
+      "name": "龙源电力",
+      "segment_ids": [
+        "wind.farm"
+      ],
+      "relevance": {
+        "wind.farm": 0.95
+      },
+      "relevance_basis": "公司主营风电及新能源电站运营",
+      "sources": [
+        {
+          "source_type": "annual_report",
+          "source_title": "2024年年度报告-主营业务分析",
+          "source_url_or_id": "巨潮资讯-001289-2024年报",
+          "data_date": "2025-04-30"
+        }
+      ]
+    },
+    {
+      "id": "600905",
+      "name": "三峡能源",
+      "segment_ids": [
+        "wind.farm",
+        "pv.epc"
+      ],
+      "relevance": {
+        "wind.farm": 0.9,
+        "pv.epc": 0.85
+      },
+      "relevance_basis": "公司主营风电及光伏电站投资运营",
+      "sources": [
+        {
+          "source_type": "annual_report",
+          "source_title": "2024年年度报告-主营业务分析",
+          "source_url_or_id": "上交所-600905-2024年报",
+          "data_date": "2025-04-30"
+        }
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "id": "edge.pv.silicon__wafer",
+      "type": "SUPPLIES_TO",
+      "from": "pv.silicon",
+      "to": "pv.wafer",
+      "description": "硅料是硅片的原材料",
+      "sources": [
+        {
+          "source_type": "industry_standard",
+          "source_title": "光伏产业链工序说明",
+          "source_url_or_id": "行业协会公开资料-光伏产业链",
+          "data_date": "2025-12-31"
+        }
+      ]
+    },
+    {
+      "id": "edge.pv.wafer__cell",
+      "type": "SUPPLIES_TO",
+      "from": "pv.wafer",
+      "to": "pv.cell",
+      "description": "硅片是电池片的原材料",
+      "sources": [
+        {
+          "source_type": "industry_standard",
+          "source_title": "光伏产业链工序说明",
+          "source_url_or_id": "行业协会公开资料-光伏产业链",
+          "data_date": "2025-12-31"
+        }
+      ]
+    },
+    {
+      "id": "edge.pv.cell__module",
+      "type": "SUPPLIES_TO",
+      "from": "pv.cell",
+      "to": "pv.module",
+      "description": "电池片是组件的核心部件",
+      "sources": [
+        {
+          "source_type": "industry_standard",
+          "source_title": "光伏产业链工序说明",
+          "source_url_or_id": "行业协会公开资料-光伏产业链",
+          "data_date": "2025-12-31"
+        }
+      ]
+    },
+    {
+      "id": "edge.pv.aux__module",
+      "type": "SUPPLIES_TO",
+      "from": "pv.aux",
+      "to": "pv.module",
+      "description": "胶膜、玻璃等辅材用于组件封装",
+      "sources": [
+        {
+          "source_type": "industry_standard",
+          "source_title": "光伏辅材与组件关系说明",
+          "source_url_or_id": "行业协会公开资料-光伏辅材",
+          "data_date": "2025-12-31"
+        }
+      ]
+    },
+    {
+      "id": "edge.pv.module__epc",
+      "type": "SUPPLIES_TO",
+      "from": "pv.module",
+      "to": "pv.epc",
+      "description": "组件用于电站建设",
+      "sources": [
+        {
+          "source_type": "industry_standard",
+          "source_title": "光伏电站建设说明",
+          "source_url_or_id": "行业协会公开资料-光伏电站",
+          "data_date": "2025-12-31"
+        }
+      ]
+    },
+    {
+      "id": "edge.pv.inverter__epc",
+      "type": "SUPPLIES_TO",
+      "from": "pv.inverter",
+      "to": "pv.epc",
+      "description": "逆变器是光伏电站的关键设备",
+      "sources": [
+        {
+          "source_type": "industry_standard",
+          "source_title": "光伏逆变器与电站关系说明",
+          "source_url_or_id": "行业协会公开资料-光伏逆变器",
+          "data_date": "2025-12-31"
+        }
+      ]
+    },
+    {
+      "id": "edge.wind.component__turbine",
+      "type": "SUPPLIES_TO",
+      "from": "wind.component",
+      "to": "wind.turbine",
+      "description": "叶片、塔筒、齿轮箱等零部件用于整机制造",
+      "sources": [
+        {
+          "source_type": "industry_standard",
+          "source_title": "风电整机制造说明",
+          "source_url_or_id": "行业协会公开资料-风电产业链",
+          "data_date": "2025-12-31"
+        }
+      ]
+    },
+    {
+      "id": "edge.wind.turbine__farm",
+      "type": "SUPPLIES_TO",
+      "from": "wind.turbine",
+      "to": "wind.farm",
+      "description": "风机用于风场建设运营",
+      "sources": [
+        {
+          "source_type": "industry_standard",
+          "source_title": "风场建设说明",
+          "source_url_or_id": "行业协会公开资料-风电产业链",
+          "data_date": "2025-12-31"
+        }
+      ]
+    }
+  ]
+}

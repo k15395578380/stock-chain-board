@@ -1,0 +1,20 @@
+# 虚拟环境
+.venv/
+venv/
+env/
+
+# Python 缓存
+__pycache__/
+*.py[cod]
+*$py.class
+
+# 评估结果等生成文件（按需保留或忽略）
+artifacts/
+
+# IDE 配置
+.vscode/
+.idea/
+
+# 系统文件
+.DS_Store
+Thumbs.db
