@@ -5,7 +5,7 @@ from pathlib import Path
 
 from openai import OpenAI
 
-CHAIN_FILES = [Path("chains/semiconductor.json"), Path("chains/newenergy.json"), Path("chains/ai_compute.json")]
+from chains_config import CHAIN_FILES
 
 SEGMENTS = {}
 COMPANIES = {}

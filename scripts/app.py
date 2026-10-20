@@ -7,7 +7,7 @@ from urllib.parse import urlparse
 sys.path.insert(0, str(Path(__file__).parent))
 from run_golden import call_agent
 
-CHAIN_FILES = [Path("chains/semiconductor.json"), Path("chains/newenergy.json"), Path("chains/ai_compute.json")]
+from chains_config import CHAIN_FILES
 
 # 建立 segment_id -> 公司列表 和 segment_id -> segment 信息的索引
 SEGMENT_COMPANIES = {}

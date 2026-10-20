@@ -3,11 +3,7 @@ import sys
 from pathlib import Path
 
 REQUIRED_SOURCE_FIELDS = ["source_type", "source_title", "source_url_or_id", "data_date"]
-CHAIN_FILES = [
-    Path("chains/semiconductor.json"),
-    Path("chains/newenergy.json"),
-    Path("chains/ai_compute.json"),
-]
+from chains_config import CHAIN_FILES
 
 def validate_file(path: Path):
     errors = []

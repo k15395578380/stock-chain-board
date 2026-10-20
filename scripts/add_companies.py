@@ -2,11 +2,7 @@ import json
 import sys
 from pathlib import Path
 
-CHAIN_FILES = {
-    "semiconductor": Path("chains/semiconductor.json"),
-    "newenergy": Path("chains/newenergy.json"),
-    "ai_compute": Path("chains/ai_compute.json"),
-}
+from chains_config import CHAIN_FILES_MAP as CHAIN_FILES
 INPUT = Path("data/companies_to_add.json")
 
 
@@ -44,7 +40,7 @@ def main():
         print("companies_to_add.json 必须是数组")
         sys.exit(1)
 
-    by_chain = {"semiconductor": [], "newenergy": [], "ai_compute": []}
+    by_chain = {k: [] for k in CHAIN_FILES}
     all_errors = []
     for c in companies:
         segs = c.get("segment_ids", [])

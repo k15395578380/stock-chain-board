@@ -7,7 +7,7 @@ from collections import defaultdict, deque
 
 GOLDEN_PATH = Path("evals/golden.jsonl")
 OUTPUT_DIR = Path("artifacts/eval-report")
-CHAIN_FILES = [Path("chains/semiconductor.json"), Path("chains/newenergy.json"),Path("chains/ai_compute.json")]
+from chains_config import CHAIN_FILES, THEME_KEYWORDS as CHAINS_THEME_KEYWORDS
 
 BOUNDARY_KEYWORDS = {
     "B01": ["未收录", "未覆盖", "不在已覆盖", "不属于"],
@@ -22,12 +22,7 @@ BOUNDARY_KEYWORDS = {
 
 
 class RuleAgent:
-    THEME_KEYWORDS = {
-        "半导体": ["semi.eda_ip", "semi.material", "semi.equipment", "semi.ic_design", "semi.wafer_fab", "semi.osat", "semi.end_app"],
-        "光伏": ["pv.silicon", "pv.wafer", "pv.cell", "pv.module", "pv.aux", "pv.inverter", "pv.epc"],
-        "风电": ["wind.component", "wind.turbine", "wind.farm"],
-        "AI算力": ["ai.chip", "ai.optical", "ai.switch", "ai.server", "ai.idc", "ai.app"],
-    }
+    THEME_KEYWORDS = CHAINS_THEME_KEYWORDS
 
     SEGMENT_ALIASES = {
         "AI芯片": "ai.chip", "芯片": "ai.chip", "加速卡": "ai.chip",
