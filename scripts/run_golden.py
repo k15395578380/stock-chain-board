@@ -306,6 +306,13 @@ class RuleAgent:
 
         # 11. 主要公司
         if "主要公司" in q or "有哪些公司" in q:
+            if matched:
+                seg = matched[0]
+                comps = [c for c in self.companies.values() if seg["id"] in c.get("segment_ids", [])]
+                comp_text = "、".join(c["name"] for c in comps) if comps else "暂无收录公司"
+                return {"text": f"{seg['name']}（{seg['id']}）的代表性公司：{comp_text}",
+                        "segments": [seg["id"]], "edges": [], "sources": seg.get("sources", []),
+                        "refused": False, "boundary_note": "基于当前收录"}
             for theme, seg_ids in self.THEME_KEYWORDS.items():
                 if theme in q:
                     comps = [c["name"] for c in self.companies.values()
