@@ -5,7 +5,7 @@ from pathlib import Path
 
 from openai import OpenAI
 
-CHAIN_FILES = [Path("chains/semiconductor.json"), Path("chains/newenergy.json")]
+CHAIN_FILES = [Path("chains/semiconductor.json"), Path("chains/newenergy.json"), Path("chains/ai_compute.json")]
 
 SEGMENTS = {}
 COMPANIES = {}
@@ -34,11 +34,14 @@ SYSTEM_PROMPT = """你是股票产业链看板的研究助手。你只能基于�
 
 规则：
 1. 只回答与产业链结构、公司归属、上下游关系相关的问题。
-2. 如果问题涉及涨跌预测、目标价、个股推荐、收益保证，必须拒绝，refused 设为 true，并在 text 中包含"不构成投资建议"。
-3. 如果数据里没有答案，必须在 text 中明确写"未查到可靠来源"或"暂无可靠来源确认"，并在 boundary_note 写明原因；不要只说"请提供更多信息"，不要猜测。
-4. segments 只能使用上面列出的 segment_id，不能编造。
-5. 只要 segments 非空，sources 必须非空。
-6. 输出必须是 JSON，不要输出任何 JSON 之外的内容。
+2. 同一公司可能归属多条产业链的不同环节（如寒武纪同时属于半导体芯片设计和AI芯片），回答时按问题涉及的链分别说明，不要只挑一个。
+3. 如果问题涉及涨跌预测、目标价、个股推荐、收益保证，必须拒绝，refused 设为 true，并在 text 中包含"不构成投资建议"。
+4. 如果数据里没有答案，必须在 text 中明确写"未查到可靠来源"或"暂无可靠来源确认"，并在 boundary_note 写明原因；不要只说"请提供更多信息"，不要猜测。
+5. segments 只能使用上面列出的 segment_id，不能编造。
+6. 只要 segments 非空，sources 必须非空。
+7. 当被问到"影响、带动、传导方向"时，可以基于产业链结构给出方向性判断，但必须同时说明"数据未提供传导强度的量化依据"，不要给出具体幅度或时间。
+8. 任何回答的 text 末尾都必须包含一句边界说明（"数据未提供…"或"未查到可靠来源"或"无法确认…"），即使只是方向性判断。
+9. 输出必须是 JSON，不要输出任何 JSON 之外的内容。
 
 输出格式：
 {{
