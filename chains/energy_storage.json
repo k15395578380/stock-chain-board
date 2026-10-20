@@ -1,0 +1,22 @@
+{
+  "chain_id": "energy_storage",
+  "chain_name": "储能",
+  "schema_version": "0.1.0",
+  "data_date": "2026-10-20",
+  "segments": [
+    {"id": "es.cell", "name": "电芯", "tier": "upstream", "description": "储能电芯、电池模组", "sources": [{"source_type": "industry_standard", "source_title": "储能产业链环节说明", "source_url_or_id": "公开行业资料-储能产业链", "data_date": "2025-12-31"}]},
+    {"id": "es.pcs", "name": "PCS与BMS", "tier": "midstream", "description": "储能变流器、电池管理系统", "sources": [{"source_type": "industry_standard", "source_title": "储能PCS环节说明", "source_url_or_id": "公开行业资料-储能PCS", "data_date": "2025-12-31"}]},
+    {"id": "es.system", "name": "系统集成", "tier": "midstream", "description": "储能系统集成与交付", "sources": [{"source_type": "industry_standard", "source_title": "储能系统集成说明", "source_url_or_id": "公开行业资料-储能系统", "data_date": "2025-12-31"}]},
+    {"id": "es.epc", "name": "电站EPC", "tier": "downstream", "description": "储能电站设计、建设", "sources": [{"source_type": "industry_standard", "source_title": "储能电站EPC说明", "source_url_or_id": "公开行业资料-储能EPC", "data_date": "2025-12-31"}]},
+    {"id": "es.operation", "name": "电站运营", "tier": "downstream", "description": "储能电站运营与租赁", "sources": [{"source_type": "industry_standard", "source_title": "储能电站运营说明", "source_url_or_id": "公开行业资料-储能运营", "data_date": "2025-12-31"}]},
+    {"id": "es.recycle", "name": "回收与梯次利用", "tier": "downstream", "description": "退役电池回收、梯次利用", "sources": [{"source_type": "industry_standard", "source_title": "电池回收环节说明", "source_url_or_id": "公开行业资料-电池回收", "data_date": "2025-12-31"}]}
+  ],
+  "companies": [],
+  "edges": [
+    {"id": "edge.es.cell__system", "type": "SUPPLIES_TO", "from": "es.cell", "to": "es.system", "description": "电芯是储能系统集成的核心部件", "sources": [{"source_type": "industry_standard", "source_title": "储能系统构成说明", "source_url_or_id": "公开行业资料-储能系统", "data_date": "2025-12-31"}]},
+    {"id": "edge.es.pcs__system", "type": "SUPPLIES_TO", "from": "es.pcs", "to": "es.system", "description": "PCS和BMS是系统集成的关键设备", "sources": [{"source_type": "industry_standard", "source_title": "储能系统设备说明", "source_url_or_id": "公开行业资料-储能系统", "data_date": "2025-12-31"}]},
+    {"id": "edge.es.system__epc", "type": "SUPPLIES_TO", "from": "es.system", "to": "es.epc", "description": "储能系统用于电站建设", "sources": [{"source_type": "industry_standard", "source_title": "储能电站建设说明", "source_url_or_id": "公开行业资料-储能EPC", "data_date": "2025-12-31"}]},
+    {"id": "edge.es.epc__operation", "type": "SUPPLIES_TO", "from": "es.epc", "to": "es.operation", "description": "电站建成后进入运营", "sources": [{"source_type": "industry_standard", "source_title": "储能电站运营说明", "source_url_or_id": "公开行业资料-储能运营", "data_date": "2025-12-31"}]},
+    {"id": "edge.es.operation__recycle", "type": "SUPPLIES_TO", "from": "es.operation", "to": "es.recycle", "description": "退役电池进入回收与梯次利用", "sources": [{"source_type": "industry_standard", "source_title": "电池回收说明", "source_url_or_id": "公开行业资料-电池回收", "data_date": "2025-12-31"}]}
+  ]
+}
