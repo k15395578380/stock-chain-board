@@ -232,7 +232,7 @@ class RuleAgent:
 
     def query(self, q):
         # 0. 复杂问题：规则 Agent 不擅长，返回空结果交给 LLM
-        complex_keywords = ["比较", "哪个更", "技术壁垒", "瓶颈", "哪个环节最"]
+        complex_keywords = ["比较", "哪个更", "哪个技术", "技术壁垒", "技术门槛", "门槛更高", "瓶颈", "哪个环节最", "更高"]
         if any(k in q for k in complex_keywords):
             return {"text": "", "segments": [], "edges": [], "sources": [],
                     "refused": False, "boundary_note": ""}
