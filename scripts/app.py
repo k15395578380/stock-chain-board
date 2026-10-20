@@ -5,9 +5,9 @@ from pathlib import Path
 from urllib.parse import urlparse
 
 sys.path.insert(0, str(Path(__file__).parent))
-from run_golden import AGENT
+from run_golden import call_agent
 
-CHAIN_FILES = [Path("chains/semiconductor.json"), Path("chains/newenergy.json")]
+CHAIN_FILES = [Path("chains/semiconductor.json"), Path("chains/newenergy.json"), Path("chains/ai_compute.json")]
 
 # 建立 segment_id -> 公司列表 和 segment_id -> segment 信息的索引
 SEGMENT_COMPANIES = {}
@@ -196,7 +196,7 @@ class Handler(BaseHTTPRequestHandler):
             self._json(400, {"text": "请求格式错误"})
             return
         query = payload.get("query", "")
-        result = AGENT.query(query)
+        result = call_agent(query)
         self._json(200, result)
 
 
