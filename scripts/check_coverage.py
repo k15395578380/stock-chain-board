@@ -1,7 +1,11 @@
 import json
 from pathlib import Path
 
-CHAIN_FILES = [Path("chains/semiconductor.json"), Path("chains/newenergy.json")]
+CHAIN_FILES = [
+    Path("chains/semiconductor.json"),
+    Path("chains/newenergy.json"),
+    Path("chains/ai_compute.json"),
+]
 
 for path in CHAIN_FILES:
     data = json.loads(path.read_text(encoding="utf-8"))

@@ -4,19 +4,434 @@
   "schema_version": "0.1.0",
   "data_date": "2026-10-19",
   "segments": [
-    {"id": "ai.chip", "name": "AI芯片与加速卡", "tier": "upstream", "description": "GPU、NPU、AI加速卡", "sources": [{"source_type": "industry_standard", "source_title": "AI算力产业链环节说明", "source_url_or_id": "公开行业资料-AI算力产业链", "data_date": "2025-12-31"}]},
-    {"id": "ai.optical", "name": "光模块与光器件", "tier": "upstream", "description": "高速光模块、光芯片、光器件", "sources": [{"source_type": "industry_standard", "source_title": "光模块环节说明", "source_url_or_id": "公开行业资料-光模块", "data_date": "2025-12-31"}]},
-    {"id": "ai.switch", "name": "交换机与网络设备", "tier": "midstream", "description": "数据中心交换机、路由器", "sources": [{"source_type": "industry_standard", "source_title": "数据中心网络设备说明", "source_url_or_id": "公开行业资料-网络设备", "data_date": "2025-12-31"}]},
-    {"id": "ai.server", "name": "服务器与整机", "tier": "midstream", "description": "AI服务器、整机制造", "sources": [{"source_type": "industry_standard", "source_title": "AI服务器环节说明", "source_url_or_id": "公开行业资料-AI服务器", "data_date": "2025-12-31"}]},
-    {"id": "ai.idc", "name": "IDC与算力租赁", "tier": "downstream", "description": "数据中心、智算中心、算力租赁", "sources": [{"source_type": "industry_standard", "source_title": "IDC环节说明", "source_url_or_id": "公开行业资料-IDC", "data_date": "2025-12-31"}]},
-    {"id": "ai.app", "name": "AI应用与云服务", "tier": "downstream", "description": "大模型、AI应用、云服务", "sources": [{"source_type": "industry_standard", "source_title": "AI应用环节说明", "source_url_or_id": "公开行业资料-AI应用", "data_date": "2025-12-31"}]}
+    {
+      "id": "ai.chip",
+      "name": "AI芯片与加速卡",
+      "tier": "upstream",
+      "description": "GPU、NPU、AI加速卡",
+      "sources": [
+        {
+          "source_type": "industry_standard",
+          "source_title": "AI算力产业链环节说明",
+          "source_url_or_id": "公开行业资料-AI算力产业链",
+          "data_date": "2025-12-31"
+        }
+      ]
+    },
+    {
+      "id": "ai.optical",
+      "name": "光模块与光器件",
+      "tier": "upstream",
+      "description": "高速光模块、光芯片、光器件",
+      "sources": [
+        {
+          "source_type": "industry_standard",
+          "source_title": "光模块环节说明",
+          "source_url_or_id": "公开行业资料-光模块",
+          "data_date": "2025-12-31"
+        }
+      ]
+    },
+    {
+      "id": "ai.switch",
+      "name": "交换机与网络设备",
+      "tier": "midstream",
+      "description": "数据中心交换机、路由器",
+      "sources": [
+        {
+          "source_type": "industry_standard",
+          "source_title": "数据中心网络设备说明",
+          "source_url_or_id": "公开行业资料-网络设备",
+          "data_date": "2025-12-31"
+        }
+      ]
+    },
+    {
+      "id": "ai.server",
+      "name": "服务器与整机",
+      "tier": "midstream",
+      "description": "AI服务器、整机制造",
+      "sources": [
+        {
+          "source_type": "industry_standard",
+          "source_title": "AI服务器环节说明",
+          "source_url_or_id": "公开行业资料-AI服务器",
+          "data_date": "2025-12-31"
+        }
+      ]
+    },
+    {
+      "id": "ai.idc",
+      "name": "IDC与算力租赁",
+      "tier": "downstream",
+      "description": "数据中心、智算中心、算力租赁",
+      "sources": [
+        {
+          "source_type": "industry_standard",
+          "source_title": "IDC环节说明",
+          "source_url_or_id": "公开行业资料-IDC",
+          "data_date": "2025-12-31"
+        }
+      ]
+    },
+    {
+      "id": "ai.app",
+      "name": "AI应用与云服务",
+      "tier": "downstream",
+      "description": "大模型、AI应用、云服务",
+      "sources": [
+        {
+          "source_type": "industry_standard",
+          "source_title": "AI应用环节说明",
+          "source_url_or_id": "公开行业资料-AI应用",
+          "data_date": "2025-12-31"
+        }
+      ]
+    }
   ],
-  "companies": [],
+  "companies": [
+    {
+      "id": "688256",
+      "name": "寒武纪",
+      "segment_ids": [
+        "ai.chip"
+      ],
+      "relevance": {
+        "ai.chip": 0.98
+      },
+      "relevance_basis": "国产AI芯片龙头，思元590（5nm）云端训练/推理加速卡，2025年营收64.97亿元同比+453%，2026H1营收59.96亿元同比+108%",
+      "sources": [
+        {
+          "source_type": "annual_report",
+          "source_title": "寒武纪2025年年度报告/2026年半年报",
+          "source_url_or_id": "上交所-688256-2025年报/2026半年报",
+          "data_date": "2026-08-31"
+        }
+      ]
+    },
+    {
+      "id": "688041",
+      "name": "海光信息",
+      "segment_ids": [
+        "ai.chip"
+      ],
+      "relevance": {
+        "ai.chip": 0.95
+      },
+      "relevance_basis": "国产x86 CPU+DCU双龙头，深算系列AI加速芯片持续放量，2025年营收143.76亿元，2026H1营收90.99亿元同比+66.52%",
+      "sources": [
+        {
+          "source_type": "annual_report",
+          "source_title": "海光信息2025年年度报告/2026年半年报",
+          "source_url_or_id": "上交所-688041-2025年报/2026半年报",
+          "data_date": "2026-08-31"
+        }
+      ]
+    },
+    {
+      "id": "300308",
+      "name": "中际旭创",
+      "segment_ids": [
+        "ai.optical"
+      ],
+      "relevance": {
+        "ai.optical": 0.98
+      },
+      "relevance_basis": "全球光模块龙头，800G/1.6T批量出货，CPO/NPO技术领先，2025年净利润107.99亿元同比+108.81%，2026H1营收417.78亿元同比+182.49%",
+      "sources": [
+        {
+          "source_type": "annual_report",
+          "source_title": "中际旭创2025年年度报告/2026年半年报",
+          "source_url_or_id": "巨潮资讯-300308-2025年报/2026半年报",
+          "data_date": "2026-08-28"
+        }
+      ]
+    },
+    {
+      "id": "300502",
+      "name": "新易盛",
+      "segment_ids": [
+        "ai.optical"
+      ],
+      "relevance": {
+        "ai.optical": 0.95
+      },
+      "relevance_basis": "全球第二大高速光模块厂商，LPO+硅光技术领先，2026H1营收209.1亿元同比+100.34%，归母净利润75.29亿元同比+90.98%",
+      "sources": [
+        {
+          "source_type": "annual_report",
+          "source_title": "新易盛2026年半年报",
+          "source_url_or_id": "巨潮资讯-300502-2026半年报",
+          "data_date": "2026-08-24"
+        }
+      ]
+    },
+    {
+      "id": "300394",
+      "name": "天孚通信",
+      "segment_ids": [
+        "ai.optical"
+      ],
+      "relevance": {
+        "ai.optical": 0.9
+      },
+      "relevance_basis": "光器件一体化龙头，光引擎等新品落地，绑定全球光模块厂商，2026H1营收28.28亿元同比+15.15%，归母净利润12.04亿元",
+      "sources": [
+        {
+          "source_type": "annual_report",
+          "source_title": "天孚通信2026年半年报",
+          "source_url_or_id": "巨潮资讯-300394-2026半年报",
+          "data_date": "2026-08-24"
+        }
+      ]
+    },
+    {
+      "id": "000938",
+      "name": "紫光股份",
+      "segment_ids": [
+        "ai.switch"
+      ],
+      "relevance": {
+        "ai.switch": 0.95
+      },
+      "relevance_basis": "控股新华三（87.98%），中国以太网交换机市场份额31.1%排名第二，数据中心交换机领域长期行业前二，AI交换机和服务器双轮驱动",
+      "sources": [
+        {
+          "source_type": "research",
+          "source_title": "2026年交换机国产替代机遇：紫光份额31%，锐捷数通增90%",
+          "source_url_or_id": "国金证券研报-2026-07-28",
+          "data_date": "2026-07-28"
+        }
+      ]
+    },
+    {
+      "id": "301165",
+      "name": "锐捷网络",
+      "segment_ids": [
+        "ai.switch"
+      ],
+      "relevance": {
+        "ai.switch": 0.9
+      },
+      "relevance_basis": "国内高端交换机领军企业，核心受益于数据中心交换机大幅增长，800G智算交换机已发布，51.2T CPO硅光交换机批量交付，2026H1归母净利润预计6-7.5亿元同比+32.71%-65.88%",
+      "sources": [
+        {
+          "source_type": "research",
+          "source_title": "通信行业点评报告：持续超预期的交换网络",
+          "source_url_or_id": "开源证券研报-2026-07-13",
+          "data_date": "2026-07-13"
+        }
+      ]
+    },
+    {
+      "id": "000977",
+      "name": "浪潮信息",
+      "segment_ids": [
+        "ai.server"
+      ],
+      "relevance": {
+        "ai.server": 0.95
+      },
+      "relevance_basis": "AI服务器整机龙头，2025年营收1647.82亿元，AI服务器业务收入占比35.21%，2026H1净利增近2.7倍",
+      "sources": [
+        {
+          "source_type": "annual_report",
+          "source_title": "浪潮信息2025年年度报告/2026年半年报",
+          "source_url_or_id": "巨潮资讯-000977-2025年报/2026半年报",
+          "data_date": "2026-08-29"
+        }
+      ]
+    },
+    {
+      "id": "601138",
+      "name": "工业富联",
+      "segment_ids": [
+        "ai.server"
+      ],
+      "relevance": {
+        "ai.server": 0.98
+      },
+      "relevance_basis": "AI服务器绝对龙头，全球AI服务器ODM市场份额42%断层第一，2025年营收9028.87亿元，2026H1营收5578.61亿元同比+54.63%，云服务商AI服务器营收同比暴涨230%",
+      "sources": [
+        {
+          "source_type": "annual_report",
+          "source_title": "工业富联2025年年度报告/2026年半年报",
+          "source_url_or_id": "上交所-601138-2025年报/2026半年报",
+          "data_date": "2026-08-29"
+        }
+      ]
+    },
+    {
+      "id": "603019",
+      "name": "中科曙光",
+      "segment_ids": [
+        "ai.server"
+      ],
+      "relevance": {
+        "ai.server": 0.9
+      },
+      "relevance_basis": "高性能服务器、液冷技术领先，2026H1营收74.66亿元同比+27.62%，归母净利润9.71亿元同比+33.31%，毛利率27.23%",
+      "sources": [
+        {
+          "source_type": "annual_report",
+          "source_title": "中科曙光2026年半年报",
+          "source_url_or_id": "上交所-603019-2026半年报",
+          "data_date": "2026-08-29"
+        }
+      ]
+    },
+    {
+      "id": "300442",
+      "name": "润泽科技",
+      "segment_ids": [
+        "ai.idc"
+      ],
+      "relevance": {
+        "ai.idc": 0.95
+      },
+      "relevance_basis": "AIDC智算中心龙头，字节第一大IDC（收入占比64%+），承接字节50%新增AI算力，AIDC业务收入同比增长126%毛利率47.3%，2026H1营收37.46亿元同比+50.05%",
+      "sources": [
+        {
+          "source_type": "annual_report",
+          "source_title": "润泽科技2026年半年报",
+          "source_url_or_id": "巨潮资讯-300442-2026半年报",
+          "data_date": "2026-08-31"
+        }
+      ]
+    },
+    {
+      "id": "300383",
+      "name": "光环新网",
+      "segment_ids": [
+        "ai.idc"
+      ],
+      "relevance": {
+        "ai.idc": 0.85
+      },
+      "relevance_basis": "传统IDC转型AIDC，字节收入占比约60%，天津宝坻200MW火山云项目2025年交付，2026H1营收33.32亿元",
+      "sources": [
+        {
+          "source_type": "annual_report",
+          "source_title": "光环新网2026年半年报",
+          "source_url_or_id": "巨潮资讯-300383-2026半年报",
+          "data_date": "2026-08-31"
+        }
+      ]
+    },
+    {
+      "id": "002230",
+      "name": "科大讯飞",
+      "segment_ids": [
+        "ai.app"
+      ],
+      "relevance": {
+        "ai.app": 0.9
+      },
+      "relevance_basis": "星火大模型+星火企业智能体平台，教育/医疗/办公/企业服务垂直场景深度渗透，收入由政企订单驱动，软硬件一体化交付",
+      "sources": [
+        {
+          "source_type": "research",
+          "source_title": "企业AI应用进入半年考：哪些公司开始把产品做成业绩",
+          "source_url_or_id": "界面新闻-2026-09-23",
+          "data_date": "2026-09-23"
+        }
+      ]
+    },
+    {
+      "id": "688111",
+      "name": "金山办公",
+      "segment_ids": [
+        "ai.app"
+      ],
+      "relevance": {
+        "ai.app": 0.85
+      },
+      "relevance_basis": "WPS AI迭代至2.0，AI写作/阅读/数据/设计助手，个人订阅+政企采购双引擎，机构预测2026年营收约69.86亿元同比+17.83%",
+      "sources": [
+        {
+          "source_type": "research",
+          "source_title": "AI办公双雄新赛点：光拼增长，更要拼交付",
+          "source_url_or_id": "搜狐财经-2026-08-27",
+          "data_date": "2026-08-27"
+        }
+      ]
+    }
+  ],
   "edges": [
-    {"id": "edge.ai.chip__server", "type": "SUPPLIES_TO", "from": "ai.chip", "to": "ai.server", "description": "AI芯片是服务器的核心算力部件", "sources": [{"source_type": "industry_standard", "source_title": "AI服务器构成说明", "source_url_or_id": "公开行业资料-AI服务器", "data_date": "2025-12-31"}]},
-    {"id": "edge.ai.optical__switch", "type": "SUPPLIES_TO", "from": "ai.optical", "to": "ai.switch", "description": "光模块是交换机互联的关键器件", "sources": [{"source_type": "industry_standard", "source_title": "交换机互联说明", "source_url_or_id": "公开行业资料-网络设备", "data_date": "2025-12-31"}]},
-    {"id": "edge.ai.switch__server", "type": "SUPPLIES_TO", "from": "ai.switch", "to": "ai.server", "description": "交换机连接服务器集群", "sources": [{"source_type": "industry_standard", "source_title": "数据中心组网说明", "source_url_or_id": "公开行业资料-网络设备", "data_date": "2025-12-31"}]},
-    {"id": "edge.ai.server__idc", "type": "SUPPLIES_TO", "from": "ai.server", "to": "ai.idc", "description": "服务器部署在数据中心", "sources": [{"source_type": "industry_standard", "source_title": "数据中心部署说明", "source_url_or_id": "公开行业资料-IDC", "data_date": "2025-12-31"}]},
-    {"id": "edge.ai.idc__app", "type": "SUPPLIES_TO", "from": "ai.idc", "to": "ai.app", "description": "算力支撑上层AI应用", "sources": [{"source_type": "industry_standard", "source_title": "算力与应用关系说明", "source_url_or_id": "公开行业资料-AI应用", "data_date": "2025-12-31"}]}
+    {
+      "id": "edge.ai.chip__server",
+      "type": "SUPPLIES_TO",
+      "from": "ai.chip",
+      "to": "ai.server",
+      "description": "AI芯片是服务器的核心算力部件",
+      "sources": [
+        {
+          "source_type": "industry_standard",
+          "source_title": "AI服务器构成说明",
+          "source_url_or_id": "公开行业资料-AI服务器",
+          "data_date": "2025-12-31"
+        }
+      ]
+    },
+    {
+      "id": "edge.ai.optical__switch",
+      "type": "SUPPLIES_TO",
+      "from": "ai.optical",
+      "to": "ai.switch",
+      "description": "光模块是交换机互联的关键器件",
+      "sources": [
+        {
+          "source_type": "industry_standard",
+          "source_title": "交换机互联说明",
+          "source_url_or_id": "公开行业资料-网络设备",
+          "data_date": "2025-12-31"
+        }
+      ]
+    },
+    {
+      "id": "edge.ai.switch__server",
+      "type": "SUPPLIES_TO",
+      "from": "ai.switch",
+      "to": "ai.server",
+      "description": "交换机连接服务器集群",
+      "sources": [
+        {
+          "source_type": "industry_standard",
+          "source_title": "数据中心组网说明",
+          "source_url_or_id": "公开行业资料-网络设备",
+          "data_date": "2025-12-31"
+        }
+      ]
+    },
+    {
+      "id": "edge.ai.server__idc",
+      "type": "SUPPLIES_TO",
+      "from": "ai.server",
+      "to": "ai.idc",
+      "description": "服务器部署在数据中心",
+      "sources": [
+        {
+          "source_type": "industry_standard",
+          "source_title": "数据中心部署说明",
+          "source_url_or_id": "公开行业资料-IDC",
+          "data_date": "2025-12-31"
+        }
+      ]
+    },
+    {
+      "id": "edge.ai.idc__app",
+      "type": "SUPPLIES_TO",
+      "from": "ai.idc",
+      "to": "ai.app",
+      "description": "算力支撑上层AI应用",
+      "sources": [
+        {
+          "source_type": "industry_standard",
+          "source_title": "算力与应用关系说明",
+          "source_url_or_id": "公开行业资料-AI应用",
+          "data_date": "2025-12-31"
+        }
+      ]
+    }
   ]
 }
