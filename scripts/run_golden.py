@@ -38,6 +38,14 @@ class RuleAgent:
           "电站EPC": "es.epc", "储能EPC": "es.epc",
           "电站运营": "es.operation", "储能运营": "es.operation",
           "回收": "es.recycle", "梯次利用": "es.recycle",
+
+          "整车": "ev.vehicle", "整车制造": "ev.vehicle", "乘用车": "ev.vehicle",
+          "动力电池": "ev.battery", "电池": "ev.battery",
+          "电机": "ev.motor", "电控": "ev.motor", "电机电控": "ev.motor",
+          "车规芯片": "ev.chip", "车规MCU": "ev.chip", "功率半导体": "ev.chip",
+          "充电桩": "ev.charging", "换电": "ev.charging",
+          "汽车服务": "ev.service", "后市场": "ev.service",
+          "正极": "ev.material", "负极": "ev.material", "电解液": "ev.material", "隔膜": "ev.material",
 }
 
     def _match_segments(self, q):
@@ -482,7 +490,7 @@ def main():
         "boundary_threshold_met": bt > 0 and bp == bt,
     }
     # 回归 case 硬门禁：任何一条 fail,overall 直接 FAIL
-    REGRESSION_IDS = {"N12", "N13", "N14", "N15", "N16", "N20", "N21", "N22"}
+    REGRESSION_IDS = {"N12", "N13", "N14", "N15", "N16", "N20", "N21", "N22", "N23", "N24", "N25"}
     regression_failures = [c["id"] for c in results if c["id"] in REGRESSION_IDS and c["status"] != "pass"]
     gates["regression_cases_pass"] = len(regression_failures) == 0
     gates["overall"] = "PASS" if all(gates.values()) else "FAIL"
