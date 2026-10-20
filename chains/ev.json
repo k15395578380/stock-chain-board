@@ -502,6 +502,44 @@
           "data_date": "2026-04-28"
         }
       ]
+    },
+    {
+      "id": "300750",
+      "name": "宁德时代",
+      "segment_ids": [
+        "ev.battery"
+      ],
+      "relevance": {
+        "ev.battery": 0.95
+      },
+      "relevance_basis": "全球动力电池龙头，动力电池装机量连续多年全球第一",
+      "sources": [
+        {
+          "source_type": "annual_report",
+          "source_title": "宁德时代2025年年度报告",
+          "source_url_or_id": "巨潮资讯-300750-2025年报",
+          "data_date": "2026-03-15"
+        }
+      ]
+    },
+    {
+      "id": "300014",
+      "name": "亿纬锂能",
+      "segment_ids": [
+        "ev.battery"
+      ],
+      "relevance": {
+        "ev.battery": 0.9
+      },
+      "relevance_basis": "主营动力电池和储能电池，动力电池出货量位居国内前列",
+      "sources": [
+        {
+          "source_type": "annual_report",
+          "source_title": "亿纬锂能2025年年度报告",
+          "source_url_or_id": "巨潮资讯-300014-2025年报",
+          "data_date": "2026-04-25"
+        }
+      ]
     }
   ],
   "edges": [

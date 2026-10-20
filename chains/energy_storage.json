@@ -338,6 +338,25 @@
           "data_date": "2026-04-28"
         }
       ]
+    },
+    {
+      "id": "300274",
+      "name": "阳光电源",
+      "segment_ids": [
+        "es.pcs"
+      ],
+      "relevance": {
+        "es.pcs": 0.9
+      },
+      "relevance_basis": "储能变流器是核心业务之一，储能系统出货量全球领先",
+      "sources": [
+        {
+          "source_type": "annual_report",
+          "source_title": "阳光电源2025年年度报告",
+          "source_url_or_id": "巨潮资讯-300274-2025年报",
+          "data_date": "2026-04-25"
+        }
+      ]
     }
   ],
   "edges": [

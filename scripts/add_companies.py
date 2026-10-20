@@ -51,7 +51,7 @@ def main():
         chain_key = ("semiconductor" if prefix == "semi"
                      else "newenergy" if prefix in ("pv", "wind")
                      else "ai_compute" if prefix == "ai"
-                     else "energy_storage" if prefix == "es" else None)
+                     else "energy_storage" if prefix == "es" else "ev" if prefix == "ev" else None)
         if not chain_key:
             all_errors.append(f"{c.get('id')}: 无法判断归属链（segment 前缀 {prefix}）")
             continue
@@ -73,13 +73,29 @@ def main():
             continue
         path = CHAIN_FILES[chain_key]
         data = load_chain(path)
-        existing_ids = {c["id"] for c in data["companies"]}
+        id_to_company = {c["id"]: c for c in data["companies"]}
         added = 0
+        merged = 0
         for c in items:
-            if c["id"] in existing_ids:
-                print(f"  跳过已存在: {c['id']} {c['name']}")
+            if c["id"] in id_to_company:
+                existing = id_to_company[c["id"]]
+                touched = False
+                for sid in c.get("segment_ids", []):
+                    if sid not in existing.setdefault("segment_ids", []):
+                        existing["segment_ids"].append(sid)
+                        touched = True
+                for sid, rel in c.get("relevance", {}).items():
+                    if sid not in existing.setdefault("relevance", {}):
+                        existing["relevance"][sid] = rel
+                        touched = True
+                if touched:
+                    print("  合并环节: " + c["id"] + " " + c["name"])
+                    merged += 1
+                else:
+                    print("  已完整，跳过: " + c["id"] + " " + c["name"])
                 continue
             data["companies"].append(c)
+            id_to_company[c["id"]] = c
             added += 1
         path.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
         print(f"{path}: 追加 {added} 家")

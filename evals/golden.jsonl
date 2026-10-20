@@ -38,3 +38,8 @@
 {"id": "N20", "category": "normal", "query": "储能产业链上游有哪些环节？", "expected_behavior": "返回电芯环节", "pass_criteria": "返回环节包含es.cell；不混入中下游环节"}
 {"id": "N21", "category": "normal", "query": "储能产业链从电芯到电站运营经过哪些环节？", "expected_behavior": "返回电芯→系统集成→电站EPC→电站运营的路径", "pass_criteria": "路径包含es.cell、es.system、es.epc、es.operation"}
 {"id": "N22", "category": "normal", "query": "PCS和系统集成是什么关系？", "expected_behavior": "PCS是系统集成的上游设备", "pass_criteria": "返回es.pcs → es.system的供给关系"}
+{"id": "N23", "category": "normal", "query": "新能源车产业链上游有哪些环节？", "expected_behavior": "返回上游材料和车规芯片两个环节", "pass_criteria": "返回环节包含ev.material、ev.chip；不混入中下游环节"}
+{"id": "N24", "category": "normal", "query": "新能源车产业链从电池到整车经过哪些环节？", "expected_behavior": "返回动力电池→整车制造的路径", "pass_criteria": "路径包含ev.battery、ev.vehicle"}
+{"id": "N25", "category": "normal", "query": "电机电控和整车是什么关系？", "expected_behavior": "电机电控是整车的上游动力系统", "pass_criteria": "返回ev.motor → ev.vehicle的供给关系"}
+{"id": "N26", "category": "normal", "query": "宁德时代在新能源车产业链什么位置？", "expected_behavior": "返回动力电池环节，同时保留储能电芯归属", "pass_criteria": "返回环节包含ev.battery和es.cell"}
+{"id": "N27", "category": "normal", "query": "阳光电源在储能产业链什么位置？", "expected_behavior": "返回PCS与BMS环节，同时保留光伏归属", "pass_criteria": "返回环节包含es.pcs、pv.inverter、pv.epc"}

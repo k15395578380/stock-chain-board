@@ -68,7 +68,22 @@ class RuleAgent:
             for seg in data["segments"]:
                 self.segments[seg["id"]] = seg
             for comp in data["companies"]:
-                self.companies[comp["name"]] = comp
+                name = comp["name"]
+                if name in self.companies:
+                    existing = self.companies[name]
+                    for sid in comp.get("segment_ids", []):
+                        if sid not in existing.setdefault("segment_ids", []):
+                            existing["segment_ids"].append(sid)
+                    for sid, rel in comp.get("relevance", {}).items():
+                        if sid not in existing.setdefault("relevance", {}):
+                            existing["relevance"][sid] = rel
+                    existing_src = existing.setdefault("sources", [])
+                    seen = set(s.get("source_url_or_id") for s in existing_src)
+                    for s in comp.get("sources", []):
+                        if s.get("source_url_or_id") not in seen:
+                            existing_src.append(s)
+                else:
+                    self.companies[name] = comp
             self.edges.extend(data["edges"])
 
     def _sources_of(self, seg_id):
