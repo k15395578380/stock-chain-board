@@ -357,6 +357,25 @@
           "data_date": "2026-04-25"
         }
       ]
+    },
+    {
+      "id": "601669",
+      "name": "中国电建",
+      "segment_ids": [
+        "es.epc"
+      ],
+      "relevance": {
+        "es.epc": 0.8
+      },
+      "relevance_basis": "主营电力工程EPC和水利水电建设，储能电站EPC是新能源业务的重要组成部分",
+      "sources": [
+        {
+          "source_type": "annual_report",
+          "source_title": "中国电建2025年年度报告",
+          "source_url_or_id": "上交所-601669-2025年报",
+          "data_date": "2026-04-28"
+        }
+      ]
     }
   ],
   "edges": [

@@ -355,6 +355,82 @@
           "data_date": "2026-08-27"
         }
       ]
+    },
+    {
+      "id": "300474",
+      "name": "景嘉微",
+      "segment_ids": [
+        "ai.chip"
+      ],
+      "relevance": {
+        "ai.chip": 0.9
+      },
+      "relevance_basis": "主营国产GPU芯片，图形处理芯片用于AI推理和信创场景",
+      "sources": [
+        {
+          "source_type": "annual_report",
+          "source_title": "景嘉微2025年年度报告",
+          "source_url_or_id": "巨潮资讯-300474-2025年报",
+          "data_date": "2026-04-28"
+        }
+      ]
+    },
+    {
+      "id": "000063",
+      "name": "中兴通讯",
+      "segment_ids": [
+        "ai.switch"
+      ],
+      "relevance": {
+        "ai.switch": 0.85
+      },
+      "relevance_basis": "主营通信设备和网络解决方案，数据中心交换机是核心产品线之一",
+      "sources": [
+        {
+          "source_type": "annual_report",
+          "source_title": "中兴通讯2025年年度报告",
+          "source_url_or_id": "巨潮资讯-000063-2025年报",
+          "data_date": "2026-04-28"
+        }
+      ]
+    },
+    {
+      "id": "603881",
+      "name": "数据港",
+      "segment_ids": [
+        "ai.idc"
+      ],
+      "relevance": {
+        "ai.idc": 0.9
+      },
+      "relevance_basis": "主营数据中心运营，批发型IDC服务主要客户为大型互联网企业",
+      "sources": [
+        {
+          "source_type": "annual_report",
+          "source_title": "数据港2025年年度报告",
+          "source_url_or_id": "上交所-603881-2025年报",
+          "data_date": "2026-04-28"
+        }
+      ]
+    },
+    {
+      "id": "300229",
+      "name": "拓尔思",
+      "segment_ids": [
+        "ai.app"
+      ],
+      "relevance": {
+        "ai.app": 0.85
+      },
+      "relevance_basis": "主营自然语言处理和大数据平台，AI应用覆盖政务、媒体、金融等垂直场景",
+      "sources": [
+        {
+          "source_type": "annual_report",
+          "source_title": "拓尔思2025年年度报告",
+          "source_url_or_id": "巨潮资讯-300229-2025年报",
+          "data_date": "2026-04-28"
+        }
+      ]
     }
   ],
   "edges": [
