@@ -50,7 +50,8 @@ def main():
         prefix = segs[0].split(".")[0]
         chain_key = ("semiconductor" if prefix == "semi"
                      else "newenergy" if prefix in ("pv", "wind")
-                     else "ai_compute" if prefix == "ai" else None)
+                     else "ai_compute" if prefix == "ai"
+                     else "energy_storage" if prefix == "es" else None)
         if not chain_key:
             all_errors.append(f"{c.get('id')}: 无法判断归属链（segment 前缀 {prefix}）")
             continue

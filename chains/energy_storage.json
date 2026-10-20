@@ -4,19 +4,417 @@
   "schema_version": "0.1.0",
   "data_date": "2026-10-20",
   "segments": [
-    {"id": "es.cell", "name": "电芯", "tier": "upstream", "description": "储能电芯、电池模组", "sources": [{"source_type": "industry_standard", "source_title": "储能产业链环节说明", "source_url_or_id": "公开行业资料-储能产业链", "data_date": "2025-12-31"}]},
-    {"id": "es.pcs", "name": "PCS与BMS", "tier": "midstream", "description": "储能变流器、电池管理系统", "sources": [{"source_type": "industry_standard", "source_title": "储能PCS环节说明", "source_url_or_id": "公开行业资料-储能PCS", "data_date": "2025-12-31"}]},
-    {"id": "es.system", "name": "系统集成", "tier": "midstream", "description": "储能系统集成与交付", "sources": [{"source_type": "industry_standard", "source_title": "储能系统集成说明", "source_url_or_id": "公开行业资料-储能系统", "data_date": "2025-12-31"}]},
-    {"id": "es.epc", "name": "电站EPC", "tier": "downstream", "description": "储能电站设计、建设", "sources": [{"source_type": "industry_standard", "source_title": "储能电站EPC说明", "source_url_or_id": "公开行业资料-储能EPC", "data_date": "2025-12-31"}]},
-    {"id": "es.operation", "name": "电站运营", "tier": "downstream", "description": "储能电站运营与租赁", "sources": [{"source_type": "industry_standard", "source_title": "储能电站运营说明", "source_url_or_id": "公开行业资料-储能运营", "data_date": "2025-12-31"}]},
-    {"id": "es.recycle", "name": "回收与梯次利用", "tier": "downstream", "description": "退役电池回收、梯次利用", "sources": [{"source_type": "industry_standard", "source_title": "电池回收环节说明", "source_url_or_id": "公开行业资料-电池回收", "data_date": "2025-12-31"}]}
+    {
+      "id": "es.cell",
+      "name": "电芯",
+      "tier": "upstream",
+      "description": "储能电芯、电池模组",
+      "sources": [
+        {
+          "source_type": "industry_standard",
+          "source_title": "储能产业链环节说明",
+          "source_url_or_id": "公开行业资料-储能产业链",
+          "data_date": "2025-12-31"
+        }
+      ]
+    },
+    {
+      "id": "es.pcs",
+      "name": "PCS与BMS",
+      "tier": "midstream",
+      "description": "储能变流器、电池管理系统",
+      "sources": [
+        {
+          "source_type": "industry_standard",
+          "source_title": "储能PCS环节说明",
+          "source_url_or_id": "公开行业资料-储能PCS",
+          "data_date": "2025-12-31"
+        }
+      ]
+    },
+    {
+      "id": "es.system",
+      "name": "系统集成",
+      "tier": "midstream",
+      "description": "储能系统集成与交付",
+      "sources": [
+        {
+          "source_type": "industry_standard",
+          "source_title": "储能系统集成说明",
+          "source_url_or_id": "公开行业资料-储能系统",
+          "data_date": "2025-12-31"
+        }
+      ]
+    },
+    {
+      "id": "es.epc",
+      "name": "电站EPC",
+      "tier": "downstream",
+      "description": "储能电站设计、建设",
+      "sources": [
+        {
+          "source_type": "industry_standard",
+          "source_title": "储能电站EPC说明",
+          "source_url_or_id": "公开行业资料-储能EPC",
+          "data_date": "2025-12-31"
+        }
+      ]
+    },
+    {
+      "id": "es.operation",
+      "name": "电站运营",
+      "tier": "downstream",
+      "description": "储能电站运营与租赁",
+      "sources": [
+        {
+          "source_type": "industry_standard",
+          "source_title": "储能电站运营说明",
+          "source_url_or_id": "公开行业资料-储能运营",
+          "data_date": "2025-12-31"
+        }
+      ]
+    },
+    {
+      "id": "es.recycle",
+      "name": "回收与梯次利用",
+      "tier": "downstream",
+      "description": "退役电池回收、梯次利用",
+      "sources": [
+        {
+          "source_type": "industry_standard",
+          "source_title": "电池回收环节说明",
+          "source_url_or_id": "公开行业资料-电池回收",
+          "data_date": "2025-12-31"
+        }
+      ]
+    }
   ],
-  "companies": [],
+  "companies": [
+    {
+      "id": "300750",
+      "name": "宁德时代",
+      "segment_ids": [
+        "es.cell"
+      ],
+      "relevance": {
+        "es.cell": 0.95
+      },
+      "relevance_basis": "全球动力电池与储能电池龙头，储能电芯出货量全球领先，2025年储能电池系统收入占比持续提升",
+      "sources": [
+        {
+          "source_type": "annual_report",
+          "source_title": "宁德时代2025年年度报告",
+          "source_url_or_id": "巨潮资讯-300750-2025年报",
+          "data_date": "2026-03-15"
+        }
+      ]
+    },
+    {
+      "id": "300014",
+      "name": "亿纬锂能",
+      "segment_ids": [
+        "es.cell"
+      ],
+      "relevance": {
+        "es.cell": 0.9
+      },
+      "relevance_basis": "主营消费电池、动力电池和储能电池，储能电芯出货量位居全球前列",
+      "sources": [
+        {
+          "source_type": "annual_report",
+          "source_title": "亿纬锂能2025年年度报告",
+          "source_url_or_id": "巨潮资讯-300014-2025年报",
+          "data_date": "2026-04-25"
+        }
+      ]
+    },
+    {
+      "id": "300438",
+      "name": "鹏辉能源",
+      "segment_ids": [
+        "es.cell"
+      ],
+      "relevance": {
+        "es.cell": 0.85
+      },
+      "relevance_basis": "主营锂离子电池，储能电池为核心业务之一，产品覆盖户用储能和工商业储能",
+      "sources": [
+        {
+          "source_type": "annual_report",
+          "source_title": "鹏辉能源2025年年度报告",
+          "source_url_or_id": "巨潮资讯-300438-2025年报",
+          "data_date": "2026-04-28"
+        }
+      ]
+    },
+    {
+      "id": "002335",
+      "name": "科华数据",
+      "segment_ids": [
+        "es.pcs"
+      ],
+      "relevance": {
+        "es.pcs": 0.85
+      },
+      "relevance_basis": "主营UPS、数据中心和储能PCS，储能变流器是核心产品线之一",
+      "sources": [
+        {
+          "source_type": "annual_report",
+          "source_title": "科华数据2025年年度报告",
+          "source_url_or_id": "巨潮资讯-002335-2025年报",
+          "data_date": "2026-04-26"
+        }
+      ]
+    },
+    {
+      "id": "300827",
+      "name": "上能电气",
+      "segment_ids": [
+        "es.pcs"
+      ],
+      "relevance": {
+        "es.pcs": 0.85
+      },
+      "relevance_basis": "主营光伏逆变器和储能变流器，储能PCS是重点发展业务",
+      "sources": [
+        {
+          "source_type": "annual_report",
+          "source_title": "上能电气2025年年度报告",
+          "source_url_or_id": "巨潮资讯-300827-2025年报",
+          "data_date": "2026-04-28"
+        }
+      ]
+    },
+    {
+      "id": "688063",
+      "name": "派能科技",
+      "segment_ids": [
+        "es.system"
+      ],
+      "relevance": {
+        "es.system": 0.9
+      },
+      "relevance_basis": "主营储能电池系统，产品覆盖户用储能、工商业储能和电网级储能系统集成",
+      "sources": [
+        {
+          "source_type": "annual_report",
+          "source_title": "派能科技2025年年度报告",
+          "source_url_or_id": "上交所-688063-2025年报",
+          "data_date": "2026-04-25"
+        }
+      ]
+    },
+    {
+      "id": "300068",
+      "name": "南都电源",
+      "segment_ids": [
+        "es.system",
+        "es.recycle"
+      ],
+      "relevance": {
+        "es.system": 0.85,
+        "es.recycle": 0.7
+      },
+      "relevance_basis": "主营储能电池系统集成，同时布局铅酸电池和锂电池回收业务",
+      "sources": [
+        {
+          "source_type": "annual_report",
+          "source_title": "南都电源2025年年度报告",
+          "source_url_or_id": "巨潮资讯-300068-2025年报",
+          "data_date": "2026-04-28"
+        }
+      ]
+    },
+    {
+      "id": "002121",
+      "name": "科陆电子",
+      "segment_ids": [
+        "es.system"
+      ],
+      "relevance": {
+        "es.system": 0.8
+      },
+      "relevance_basis": "主营智能电网和储能系统，储能业务覆盖电网侧和用户侧系统集成",
+      "sources": [
+        {
+          "source_type": "annual_report",
+          "source_title": "科陆电子2025年年度报告",
+          "source_url_or_id": "巨潮资讯-002121-2025年报",
+          "data_date": "2026-04-28"
+        }
+      ]
+    },
+    {
+      "id": "688248",
+      "name": "南网科技",
+      "segment_ids": [
+        "es.epc"
+      ],
+      "relevance": {
+        "es.epc": 0.85
+      },
+      "relevance_basis": "主营电力技术服务和智能设备，储能EPC和调频服务是重点业务",
+      "sources": [
+        {
+          "source_type": "annual_report",
+          "source_title": "南网科技2025年年度报告",
+          "source_url_or_id": "上交所-688248-2025年报",
+          "data_date": "2026-04-26"
+        }
+      ]
+    },
+    {
+      "id": "000400",
+      "name": "许继电气",
+      "segment_ids": [
+        "es.epc"
+      ],
+      "relevance": {
+        "es.epc": 0.8
+      },
+      "relevance_basis": "主营电力系统自动化设备和直流输电，储能EPC和系统集成是延伸业务",
+      "sources": [
+        {
+          "source_type": "annual_report",
+          "source_title": "许继电气2025年年度报告",
+          "source_url_or_id": "巨潮资讯-000400-2025年报",
+          "data_date": "2026-04-28"
+        }
+      ]
+    },
+    {
+      "id": "600995",
+      "name": "南网储能",
+      "segment_ids": [
+        "es.operation"
+      ],
+      "relevance": {
+        "es.operation": 0.95
+      },
+      "relevance_basis": "主营抽水蓄能和新型储能电站运营，是A股纯储能运营平台",
+      "sources": [
+        {
+          "source_type": "annual_report",
+          "source_title": "南网储能2025年年度报告",
+          "source_url_or_id": "上交所-600995-2025年报",
+          "data_date": "2026-04-26"
+        }
+      ]
+    },
+    {
+      "id": "002340",
+      "name": "格林美",
+      "segment_ids": [
+        "es.recycle"
+      ],
+      "relevance": {
+        "es.recycle": 0.9
+      },
+      "relevance_basis": "主营动力电池回收和三元前驱体，退役电池回收与梯次利用是核心业务",
+      "sources": [
+        {
+          "source_type": "annual_report",
+          "source_title": "格林美2025年年度报告",
+          "source_url_or_id": "巨潮资讯-002340-2025年报",
+          "data_date": "2026-04-28"
+        }
+      ]
+    },
+    {
+      "id": "002009",
+      "name": "天奇股份",
+      "segment_ids": [
+        "es.recycle"
+      ],
+      "relevance": {
+        "es.recycle": 0.85
+      },
+      "relevance_basis": "主营汽车自动化装备和锂电池回收，电池回收与梯次利用是重点业务",
+      "sources": [
+        {
+          "source_type": "annual_report",
+          "source_title": "天奇股份2025年年度报告",
+          "source_url_or_id": "巨潮资讯-002009-2025年报",
+          "data_date": "2026-04-28"
+        }
+      ]
+    }
+  ],
   "edges": [
-    {"id": "edge.es.cell__system", "type": "SUPPLIES_TO", "from": "es.cell", "to": "es.system", "description": "电芯是储能系统集成的核心部件", "sources": [{"source_type": "industry_standard", "source_title": "储能系统构成说明", "source_url_or_id": "公开行业资料-储能系统", "data_date": "2025-12-31"}]},
-    {"id": "edge.es.pcs__system", "type": "SUPPLIES_TO", "from": "es.pcs", "to": "es.system", "description": "PCS和BMS是系统集成的关键设备", "sources": [{"source_type": "industry_standard", "source_title": "储能系统设备说明", "source_url_or_id": "公开行业资料-储能系统", "data_date": "2025-12-31"}]},
-    {"id": "edge.es.system__epc", "type": "SUPPLIES_TO", "from": "es.system", "to": "es.epc", "description": "储能系统用于电站建设", "sources": [{"source_type": "industry_standard", "source_title": "储能电站建设说明", "source_url_or_id": "公开行业资料-储能EPC", "data_date": "2025-12-31"}]},
-    {"id": "edge.es.epc__operation", "type": "SUPPLIES_TO", "from": "es.epc", "to": "es.operation", "description": "电站建成后进入运营", "sources": [{"source_type": "industry_standard", "source_title": "储能电站运营说明", "source_url_or_id": "公开行业资料-储能运营", "data_date": "2025-12-31"}]},
-    {"id": "edge.es.operation__recycle", "type": "SUPPLIES_TO", "from": "es.operation", "to": "es.recycle", "description": "退役电池进入回收与梯次利用", "sources": [{"source_type": "industry_standard", "source_title": "电池回收说明", "source_url_or_id": "公开行业资料-电池回收", "data_date": "2025-12-31"}]}
+    {
+      "id": "edge.es.cell__system",
+      "type": "SUPPLIES_TO",
+      "from": "es.cell",
+      "to": "es.system",
+      "description": "电芯是储能系统集成的核心部件",
+      "sources": [
+        {
+          "source_type": "industry_standard",
+          "source_title": "储能系统构成说明",
+          "source_url_or_id": "公开行业资料-储能系统",
+          "data_date": "2025-12-31"
+        }
+      ]
+    },
+    {
+      "id": "edge.es.pcs__system",
+      "type": "SUPPLIES_TO",
+      "from": "es.pcs",
+      "to": "es.system",
+      "description": "PCS和BMS是系统集成的关键设备",
+      "sources": [
+        {
+          "source_type": "industry_standard",
+          "source_title": "储能系统设备说明",
+          "source_url_or_id": "公开行业资料-储能系统",
+          "data_date": "2025-12-31"
+        }
+      ]
+    },
+    {
+      "id": "edge.es.system__epc",
+      "type": "SUPPLIES_TO",
+      "from": "es.system",
+      "to": "es.epc",
+      "description": "储能系统用于电站建设",
+      "sources": [
+        {
+          "source_type": "industry_standard",
+          "source_title": "储能电站建设说明",
+          "source_url_or_id": "公开行业资料-储能EPC",
+          "data_date": "2025-12-31"
+        }
+      ]
+    },
+    {
+      "id": "edge.es.epc__operation",
+      "type": "SUPPLIES_TO",
+      "from": "es.epc",
+      "to": "es.operation",
+      "description": "电站建成后进入运营",
+      "sources": [
+        {
+          "source_type": "industry_standard",
+          "source_title": "储能电站运营说明",
+          "source_url_or_id": "公开行业资料-储能运营",
+          "data_date": "2025-12-31"
+        }
+      ]
+    },
+    {
+      "id": "edge.es.operation__recycle",
+      "type": "SUPPLIES_TO",
+      "from": "es.operation",
+      "to": "es.recycle",
+      "description": "退役电池进入回收与梯次利用",
+      "sources": [
+        {
+          "source_type": "industry_standard",
+          "source_title": "电池回收说明",
+          "source_url_or_id": "公开行业资料-电池回收",
+          "data_date": "2025-12-31"
+        }
+      ]
+    }
   ]
 }
