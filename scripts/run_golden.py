@@ -31,13 +31,20 @@ class RuleAgent:
         "服务器": "ai.server", "整机": "ai.server",
         "IDC": "ai.idc", "算力租赁": "ai.idc", "数据中心": "ai.idc",
         "AI应用": "ai.app", "应用": "ai.app", "云服务": "ai.app", "大模型": "ai.app",
-    }
+    
+          "PCS": "es.pcs", "BMS": "es.pcs", "变流器": "es.pcs",
+          "系统集成": "es.system", "储能系统": "es.system",
+          "电芯": "es.cell", "储能电芯": "es.cell",
+          "电站EPC": "es.epc", "储能EPC": "es.epc",
+          "电站运营": "es.operation", "储能运营": "es.operation",
+          "回收": "es.recycle", "梯次利用": "es.recycle",
+}
 
     def _match_segments(self, q):
-        matched = [seg for seg in self.segments.values() if seg["name"] in q]
-        if matched:
-            return matched
         hit_ids = []
+        for seg in self.segments.values():
+            if seg["name"] in q and seg["id"] not in hit_ids:
+                hit_ids.append(seg["id"])
         for alias, sid in self.SEGMENT_ALIASES.items():
             if alias in q and sid in self.segments and sid not in hit_ids:
                 hit_ids.append(sid)
@@ -475,7 +482,7 @@ def main():
         "boundary_threshold_met": bt > 0 and bp == bt,
     }
     # 回归 case 硬门禁：任何一条 fail,overall 直接 FAIL
-    REGRESSION_IDS = {"N12", "N13", "N14", "N15", "N16"}
+    REGRESSION_IDS = {"N12", "N13", "N14", "N15", "N16", "N20", "N21", "N22"}
     regression_failures = [c["id"] for c in results if c["id"] in REGRESSION_IDS and c["status"] != "pass"]
     gates["regression_cases_pass"] = len(regression_failures) == 0
     gates["overall"] = "PASS" if all(gates.values()) else "FAIL"
