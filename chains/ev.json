@@ -1,0 +1,599 @@
+{
+  "chain_id": "ev",
+  "chain_name": "新能源车",
+  "schema_version": "0.1.0",
+  "data_date": "2026-10-20",
+  "segments": [
+    {
+      "id": "ev.material",
+      "name": "上游材料",
+      "tier": "upstream",
+      "description": "正极、负极、电解液、隔膜",
+      "sources": [
+        {
+          "source_type": "industry_standard",
+          "source_title": "新能源车产业链说明",
+          "source_url_or_id": "公开行业资料-新能源车产业链",
+          "data_date": "2025-12-31"
+        }
+      ]
+    },
+    {
+      "id": "ev.battery",
+      "name": "动力电池",
+      "tier": "midstream",
+      "description": "动力电池电芯与Pack",
+      "sources": [
+        {
+          "source_type": "industry_standard",
+          "source_title": "动力电池环节说明",
+          "source_url_or_id": "公开行业资料-动力电池",
+          "data_date": "2025-12-31"
+        }
+      ]
+    },
+    {
+      "id": "ev.motor",
+      "name": "电机电控",
+      "tier": "midstream",
+      "description": "驱动电机、电控系统",
+      "sources": [
+        {
+          "source_type": "industry_standard",
+          "source_title": "电机电控环节说明",
+          "source_url_or_id": "公开行业资料-电机电控",
+          "data_date": "2025-12-31"
+        }
+      ]
+    },
+    {
+      "id": "ev.chip",
+      "name": "车规芯片",
+      "tier": "upstream",
+      "description": "车规MCU、功率半导体、传感器",
+      "sources": [
+        {
+          "source_type": "industry_standard",
+          "source_title": "车规芯片环节说明",
+          "source_url_or_id": "公开行业资料-车规芯片",
+          "data_date": "2025-12-31"
+        }
+      ]
+    },
+    {
+      "id": "ev.vehicle",
+      "name": "整车制造",
+      "tier": "downstream",
+      "description": "乘用车、商用车整车",
+      "sources": [
+        {
+          "source_type": "industry_standard",
+          "source_title": "整车制造环节说明",
+          "source_url_or_id": "公开行业资料-整车",
+          "data_date": "2025-12-31"
+        }
+      ]
+    },
+    {
+      "id": "ev.charging",
+      "name": "充电桩与换电",
+      "tier": "downstream",
+      "description": "充电桩、换电站",
+      "sources": [
+        {
+          "source_type": "industry_standard",
+          "source_title": "充电桩环节说明",
+          "source_url_or_id": "公开行业资料-充电桩",
+          "data_date": "2025-12-31"
+        }
+      ]
+    },
+    {
+      "id": "ev.service",
+      "name": "汽车服务与后市场",
+      "tier": "downstream",
+      "description": "经销商、维修、二手车",
+      "sources": [
+        {
+          "source_type": "industry_standard",
+          "source_title": "汽车后市场说明",
+          "source_url_or_id": "公开行业资料-汽车后市场",
+          "data_date": "2025-12-31"
+        }
+      ]
+    }
+  ],
+  "companies": [
+    {
+      "id": "002709",
+      "name": "天赐材料",
+      "segment_ids": [
+        "ev.material"
+      ],
+      "relevance": {
+        "ev.material": 0.9
+      },
+      "relevance_basis": "主营锂离子电池电解液和正极材料，电解液全球市占率领先",
+      "sources": [
+        {
+          "source_type": "annual_report",
+          "source_title": "天赐材料2025年年度报告",
+          "source_url_or_id": "巨潮资讯-002709-2025年报",
+          "data_date": "2026-04-28"
+        }
+      ]
+    },
+    {
+      "id": "603659",
+      "name": "璞泰来",
+      "segment_ids": [
+        "ev.material"
+      ],
+      "relevance": {
+        "ev.material": 0.9
+      },
+      "relevance_basis": "主营锂电负极材料和涂覆隔膜，是负极材料龙头之一",
+      "sources": [
+        {
+          "source_type": "annual_report",
+          "source_title": "璞泰来2025年年度报告",
+          "source_url_or_id": "上交所-603659-2025年报",
+          "data_date": "2026-04-28"
+        }
+      ]
+    },
+    {
+      "id": "002812",
+      "name": "恩捷股份",
+      "segment_ids": [
+        "ev.material"
+      ],
+      "relevance": {
+        "ev.material": 0.9
+      },
+      "relevance_basis": "主营锂电隔膜，是全球湿法隔膜出货量第一的供应商",
+      "sources": [
+        {
+          "source_type": "annual_report",
+          "source_title": "恩捷股份2025年年度报告",
+          "source_url_or_id": "巨潮资讯-002812-2025年报",
+          "data_date": "2026-04-28"
+        }
+      ]
+    },
+    {
+      "id": "002074",
+      "name": "国轩高科",
+      "segment_ids": [
+        "ev.battery"
+      ],
+      "relevance": {
+        "ev.battery": 0.9
+      },
+      "relevance_basis": "主营磷酸铁锂动力电池，是国内动力电池装机量前列企业",
+      "sources": [
+        {
+          "source_type": "annual_report",
+          "source_title": "国轩高科2025年年度报告",
+          "source_url_or_id": "巨潮资讯-002074-2025年报",
+          "data_date": "2026-04-28"
+        }
+      ]
+    },
+    {
+      "id": "300207",
+      "name": "欣旺达",
+      "segment_ids": [
+        "ev.battery"
+      ],
+      "relevance": {
+        "ev.battery": 0.85
+      },
+      "relevance_basis": "主营消费电池和动力电池，动力电池业务覆盖电芯、模组和Pack",
+      "sources": [
+        {
+          "source_type": "annual_report",
+          "source_title": "欣旺达2025年年度报告",
+          "source_url_or_id": "巨潮资讯-300207-2025年报",
+          "data_date": "2026-04-28"
+        }
+      ]
+    },
+    {
+      "id": "688567",
+      "name": "孚能科技",
+      "segment_ids": [
+        "ev.battery"
+      ],
+      "relevance": {
+        "ev.battery": 0.85
+      },
+      "relevance_basis": "主营三元软包动力电池，是软包动力电池主要供应商之一",
+      "sources": [
+        {
+          "source_type": "annual_report",
+          "source_title": "孚能科技2025年年度报告",
+          "source_url_or_id": "上交所-688567-2025年报",
+          "data_date": "2026-04-28"
+        }
+      ]
+    },
+    {
+      "id": "300124",
+      "name": "汇川技术",
+      "segment_ids": [
+        "ev.motor"
+      ],
+      "relevance": {
+        "ev.motor": 0.9
+      },
+      "relevance_basis": "主营工业自动化和新能源汽车电驱系统，电机电控是核心业务之一",
+      "sources": [
+        {
+          "source_type": "annual_report",
+          "source_title": "汇川技术2025年年度报告",
+          "source_url_or_id": "巨潮资讯-300124-2025年报",
+          "data_date": "2026-04-28"
+        }
+      ]
+    },
+    {
+      "id": "002196",
+      "name": "方正电机",
+      "segment_ids": [
+        "ev.motor"
+      ],
+      "relevance": {
+        "ev.motor": 0.85
+      },
+      "relevance_basis": "主营微特电机和新能源汽车驱动电机，驱动电机是重点业务",
+      "sources": [
+        {
+          "source_type": "annual_report",
+          "source_title": "方正电机2025年年度报告",
+          "source_url_or_id": "巨潮资讯-002196-2025年报",
+          "data_date": "2026-04-28"
+        }
+      ]
+    },
+    {
+      "id": "688280",
+      "name": "精进电动",
+      "segment_ids": [
+        "ev.motor"
+      ],
+      "relevance": {
+        "ev.motor": 0.9
+      },
+      "relevance_basis": "主营新能源汽车驱动电机和动力总成，是专业电驱系统供应商",
+      "sources": [
+        {
+          "source_type": "annual_report",
+          "source_title": "精进电动2025年年度报告",
+          "source_url_or_id": "上交所-688280-2025年报",
+          "data_date": "2026-04-28"
+        }
+      ]
+    },
+    {
+      "id": "603290",
+      "name": "斯达半导",
+      "segment_ids": [
+        "ev.chip"
+      ],
+      "relevance": {
+        "ev.chip": 0.9
+      },
+      "relevance_basis": "主营IGBT功率半导体，车规IGBT是新能源汽车电控的核心器件",
+      "sources": [
+        {
+          "source_type": "annual_report",
+          "source_title": "斯达半导2025年年度报告",
+          "source_url_or_id": "上交所-603290-2025年报",
+          "data_date": "2026-04-28"
+        }
+      ]
+    },
+    {
+      "id": "688187",
+      "name": "时代电气",
+      "segment_ids": [
+        "ev.chip"
+      ],
+      "relevance": {
+        "ev.chip": 0.85
+      },
+      "relevance_basis": "主营轨道交通装备和功率半导体，IGBT和SiC器件用于新能源汽车",
+      "sources": [
+        {
+          "source_type": "annual_report",
+          "source_title": "时代电气2025年年度报告",
+          "source_url_or_id": "上交所-688187-2025年报",
+          "data_date": "2026-04-28"
+        }
+      ]
+    },
+    {
+      "id": "688052",
+      "name": "纳芯微",
+      "segment_ids": [
+        "ev.chip"
+      ],
+      "relevance": {
+        "ev.chip": 0.85
+      },
+      "relevance_basis": "主营模拟芯片和车规级传感器，产品覆盖新能源汽车电子系统",
+      "sources": [
+        {
+          "source_type": "annual_report",
+          "source_title": "纳芯微2025年年度报告",
+          "source_url_or_id": "上交所-688052-2025年报",
+          "data_date": "2026-04-28"
+        }
+      ]
+    },
+    {
+      "id": "002594",
+      "name": "比亚迪",
+      "segment_ids": [
+        "ev.vehicle"
+      ],
+      "relevance": {
+        "ev.vehicle": 0.95
+      },
+      "relevance_basis": "新能源汽车整车龙头，覆盖纯电和插混全系列车型",
+      "sources": [
+        {
+          "source_type": "annual_report",
+          "source_title": "比亚迪2025年年度报告",
+          "source_url_or_id": "巨潮资讯-002594-2025年报",
+          "data_date": "2026-03-26"
+        }
+      ]
+    },
+    {
+      "id": "000625",
+      "name": "长安汽车",
+      "segment_ids": [
+        "ev.vehicle"
+      ],
+      "relevance": {
+        "ev.vehicle": 0.85
+      },
+      "relevance_basis": "自主品牌整车企业，新能源车型覆盖深蓝、阿维塔等品牌",
+      "sources": [
+        {
+          "source_type": "annual_report",
+          "source_title": "长安汽车2025年年度报告",
+          "source_url_or_id": "巨潮资讯-000625-2025年报",
+          "data_date": "2026-04-28"
+        }
+      ]
+    },
+    {
+      "id": "601127",
+      "name": "赛力斯",
+      "segment_ids": [
+        "ev.vehicle"
+      ],
+      "relevance": {
+        "ev.vehicle": 0.9
+      },
+      "relevance_basis": "与华为合作打造问界品牌，新能源汽车整车制造与销售",
+      "sources": [
+        {
+          "source_type": "annual_report",
+          "source_title": "赛力斯2025年年度报告",
+          "source_url_or_id": "上交所-601127-2025年报",
+          "data_date": "2026-04-28"
+        }
+      ]
+    },
+    {
+      "id": "300001",
+      "name": "特锐德",
+      "segment_ids": [
+        "ev.charging"
+      ],
+      "relevance": {
+        "ev.charging": 0.9
+      },
+      "relevance_basis": "主营充电桩运营和电力设备，子公司特来电是充电桩运营龙头",
+      "sources": [
+        {
+          "source_type": "annual_report",
+          "source_title": "特锐德2025年年度报告",
+          "source_url_or_id": "巨潮资讯-300001-2025年报",
+          "data_date": "2026-04-28"
+        }
+      ]
+    },
+    {
+      "id": "300693",
+      "name": "盛弘股份",
+      "segment_ids": [
+        "ev.charging"
+      ],
+      "relevance": {
+        "ev.charging": 0.85
+      },
+      "relevance_basis": "主营电力电子设备，充电桩模块和充电桩是核心业务之一",
+      "sources": [
+        {
+          "source_type": "annual_report",
+          "source_title": "盛弘股份2025年年度报告",
+          "source_url_or_id": "巨潮资讯-300693-2025年报",
+          "data_date": "2026-04-28"
+        }
+      ]
+    },
+    {
+      "id": "002227",
+      "name": "奥特迅",
+      "segment_ids": [
+        "ev.charging"
+      ],
+      "relevance": {
+        "ev.charging": 0.8
+      },
+      "relevance_basis": "主营电力自动化电源和电动汽车充电设备，充电桩是重点业务",
+      "sources": [
+        {
+          "source_type": "annual_report",
+          "source_title": "奥特迅2025年年度报告",
+          "source_url_or_id": "巨潮资讯-002227-2025年报",
+          "data_date": "2026-04-28"
+        }
+      ]
+    },
+    {
+      "id": "600335",
+      "name": "国机汽车",
+      "segment_ids": [
+        "ev.service"
+      ],
+      "relevance": {
+        "ev.service": 0.85
+      },
+      "relevance_basis": "主营汽车批发零售和汽车后市场服务，是国内大型汽车经销集团",
+      "sources": [
+        {
+          "source_type": "annual_report",
+          "source_title": "国机汽车2025年年度报告",
+          "source_url_or_id": "上交所-600335-2025年报",
+          "data_date": "2026-04-28"
+        }
+      ]
+    },
+    {
+      "id": "601965",
+      "name": "中国汽研",
+      "segment_ids": [
+        "ev.service"
+      ],
+      "relevance": {
+        "ev.service": 0.8
+      },
+      "relevance_basis": "主营汽车检测认证和技术服务，属于汽车后市场技术服务环节",
+      "sources": [
+        {
+          "source_type": "annual_report",
+          "source_title": "中国汽研2025年年度报告",
+          "source_url_or_id": "上交所-601965-2025年报",
+          "data_date": "2026-04-28"
+        }
+      ]
+    },
+    {
+      "id": "300825",
+      "name": "阿尔特",
+      "segment_ids": [
+        "ev.service"
+      ],
+      "relevance": {
+        "ev.service": 0.8
+      },
+      "relevance_basis": "主营汽车设计研发服务，为整车企业提供车型开发和技术服务",
+      "sources": [
+        {
+          "source_type": "annual_report",
+          "source_title": "阿尔特2025年年度报告",
+          "source_url_or_id": "巨潮资讯-300825-2025年报",
+          "data_date": "2026-04-28"
+        }
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "id": "edge.ev.material__battery",
+      "type": "SUPPLIES_TO",
+      "from": "ev.material",
+      "to": "ev.battery",
+      "description": "正负极、电解液、隔膜是电池材料",
+      "sources": [
+        {
+          "source_type": "industry_standard",
+          "source_title": "电池材料说明",
+          "source_url_or_id": "公开行业资料-电池材料",
+          "data_date": "2025-12-31"
+        }
+      ]
+    },
+    {
+      "id": "edge.ev.chip__vehicle",
+      "type": "SUPPLIES_TO",
+      "from": "ev.chip",
+      "to": "ev.vehicle",
+      "description": "车规芯片用于整车电子系统",
+      "sources": [
+        {
+          "source_type": "industry_standard",
+          "source_title": "车规芯片应用说明",
+          "source_url_or_id": "公开行业资料-车规芯片",
+          "data_date": "2025-12-31"
+        }
+      ]
+    },
+    {
+      "id": "edge.ev.battery__vehicle",
+      "type": "SUPPLIES_TO",
+      "from": "ev.battery",
+      "to": "ev.vehicle",
+      "description": "动力电池是整车核心部件",
+      "sources": [
+        {
+          "source_type": "industry_standard",
+          "source_title": "动力电池应用说明",
+          "source_url_or_id": "公开行业资料-动力电池",
+          "data_date": "2025-12-31"
+        }
+      ]
+    },
+    {
+      "id": "edge.ev.motor__vehicle",
+      "type": "SUPPLIES_TO",
+      "from": "ev.motor",
+      "to": "ev.vehicle",
+      "description": "电机电控是整车动力系统",
+      "sources": [
+        {
+          "source_type": "industry_standard",
+          "source_title": "电机电控应用说明",
+          "source_url_or_id": "公开行业资料-电机电控",
+          "data_date": "2025-12-31"
+        }
+      ]
+    },
+    {
+      "id": "edge.ev.vehicle__charging",
+      "type": "SUPPLIES_TO",
+      "from": "ev.vehicle",
+      "to": "ev.charging",
+      "description": "整车销售带动充电桩需求",
+      "sources": [
+        {
+          "source_type": "industry_standard",
+          "source_title": "充电桩需求说明",
+          "source_url_or_id": "公开行业资料-充电桩",
+          "data_date": "2025-12-31"
+        }
+      ]
+    },
+    {
+      "id": "edge.ev.vehicle__service",
+      "type": "SUPPLIES_TO",
+      "from": "ev.vehicle",
+      "to": "ev.service",
+      "description": "整车保有量支撑后市场服务",
+      "sources": [
+        {
+          "source_type": "industry_standard",
+          "source_title": "汽车后市场说明",
+          "source_url_or_id": "公开行业资料-汽车后市场",
+          "data_date": "2025-12-31"
+        }
+      ]
+    }
+  ]
+}

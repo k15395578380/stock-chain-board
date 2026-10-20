@@ -5,6 +5,7 @@ CHAIN_FILES = [
     Path("chains/newenergy.json"),
     Path("chains/ai_compute.json"),
     Path("chains/energy_storage.json"),
+    Path("chains/ev.json"),
 ]
 
 CHAIN_FILES_MAP = {
@@ -12,6 +13,7 @@ CHAIN_FILES_MAP = {
     "newenergy": Path("chains/newenergy.json"),
     "ai_compute": Path("chains/ai_compute.json"),
     "energy_storage": Path("chains/energy_storage.json"),
+    "ev": Path("chains/ev.json"),
 }
 
 THEME_KEYWORDS = {
@@ -22,4 +24,5 @@ THEME_KEYWORDS = {
     "风电": ["wind.component", "wind.turbine", "wind.farm"],
     "AI算力": ["ai.chip", "ai.optical", "ai.switch", "ai.server", "ai.idc", "ai.app"],
     "储能": ["es.cell", "es.pcs", "es.system", "es.epc", "es.operation", "es.recycle"],
+    "新能源车": ["ev.material", "ev.battery", "ev.motor", "ev.chip", "ev.vehicle", "ev.charging", "ev.service"],
 }
