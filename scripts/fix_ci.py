@@ -1,0 +1,44 @@
+from pathlib import Path
+
+content = '''name: eval-gate
+on:
+  push:
+    branches: [main]
+    paths:
+      - "chains/**"
+      - "evals/**"
+      - "scripts/**"
+  pull_request:
+    paths:
+      - "chains/**"
+      - "evals/**"
+      - "scripts/**"
+
+jobs:
+  gate:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: Validate chains
+        run: python scripts/validate_chains.py
+      - name: Run rule gate
+        run: python scripts/run_golden.py
+      - name: Run LLM gate
+        run: python scripts/run_llm_golden.py
+        env:
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+      - name: Enforce gate
+        run: |
+          python -c "
+          import json, sys
+          r = json.load(open('artifacts/eval-report/report.json'))
+          sys.exit(0 if r['gates']['overall'] == 'PASS' else 1)
+          "
+'''
+
+path = Path(".github/workflows/eval-gate.yml")
+path.write_text(content, encoding="utf-8")
+print(f"已重写 eval-gate.yml，大小 {path.stat().st_size} 字节")

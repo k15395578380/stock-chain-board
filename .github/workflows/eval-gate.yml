@@ -22,8 +22,12 @@ jobs:
           python-version: "3.12"
       - name: Validate chains
         run: python scripts/validate_chains.py
-      - name: Run golden eval
+      - name: Run rule gate
         run: python scripts/run_golden.py
+      - name: Run LLM gate
+        run: python scripts/run_llm_golden.py
+        env:
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
       - name: Enforce gate
         run: |
           python -c "
